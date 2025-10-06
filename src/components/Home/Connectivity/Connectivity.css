@@ -1,0 +1,95 @@
+.connectivity_section {
+    background-color: var(--color-black);
+    position: relative;
+}
+.connectivity_section .connectivity_section_bg {
+    opacity: 0.2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+}
+.connectivity_section .container {
+    position: relative;
+}
+.connectivity_section .main_heading {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+.large_heading {
+    font-size: 45px;
+    color: var(--color-white);
+    font-weight: 600;
+    font-family: var(--font-semibold);
+    text-align: center;
+}
+.connectivity_grid {
+    display: grid;
+    gap: 3rem 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+.connectivity_grid_item {
+    color: var(--color-white);
+    display: flex;
+    gap: 15px;
+    align-items: start;
+}
+.connectivity_grid_item .connectivity_icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+.connectivity_text_block .connectivity_title {
+    font-size: 25px;
+    font-weight: 600;
+    font-family: var(--font-semibold);
+    color: var(--color-yellow);
+    margin-bottom: 2rem;
+}
+.connectivity_text_block .connectivity_text {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: var(--font-semibold);
+}
+@media (max-width: 991px) {
+    .connectivity_text_block .connectivity_text {
+        font-size: 16px;
+    }
+    .connectivity_text_block .connectivity_title {
+        font-size: 20px;
+    }
+    .large_heading {
+        font-size: 40px;
+    }
+    .connectivity_grid_item .connectivity_icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+@media (max-width: 767px) {
+    .connectivity_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .connectivity_section .main_heading {
+        font-size: 20px;
+    }
+    .large_heading {
+        font-size: 30px;
+    }
+    .connectivity_text_block .connectivity_title {
+        font-size: 18px;
+    }
+}
+@media (max-width: 575px) {
+    .connectivity_grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .connectivity_text_block .connectivity_title {
+        margin-bottom: 1rem;
+    }
+}
