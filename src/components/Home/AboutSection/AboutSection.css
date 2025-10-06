@@ -1,0 +1,41 @@
+.main_heading {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: var(--font-semibold);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.paragraph {
+    font-size: 18px;
+}
+.home-about-section .paragraph {
+    margin-bottom: 1rem;
+}
+.home-about-section .paragraph a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.home-about-section .btn-yellow-border {
+    margin-top: 3rem;
+}
+.btn-yellow-border {
+    border: 2px solid var(--color-yellow) !important;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: var(--font-medium);
+    color: var(--color-yellow);
+    background-color: var(--color-transparent);
+    border-radius: 0;
+    text-transform: uppercase;
+    padding: 10px 15px;
+}
+.btn-yellow-border:hover,
+.btn-yellow-border:active {
+    background-color: var(--color-yellow);
+    color: var(--color-white);
+}
+@media (max-width: 767px) {
+    .paragraph {
+        font-size: 16px;
+    }
+}

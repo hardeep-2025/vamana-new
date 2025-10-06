@@ -1,0 +1,15 @@
+.form-input:focus{
+    box-shadow: unset;
+}
+/* .PhoneInputCountry {
+    display: none !important;
+} */
+
+input.align-middle.size-4{
+   scale: 1.5;
+    margin-right: 12px;
+}
+
+input#name,input#email,.PhoneInput {
+    border-radius: 0px!important;
+}

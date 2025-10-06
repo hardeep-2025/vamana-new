@@ -1,0 +1,24 @@
+.footer_main {
+    padding-top: 4rem !important;
+}
+.footer_main .column-first {
+    padding-right: 20px;
+    max-width: 550px;
+}
+.footer_main .footer-columns {
+    width: 100%;
+}
+@media (max-width: 767px) {
+    .footer_main .column-first {
+        padding-right: 0px;
+        max-width: 100%;
+        text-align: center;
+    }
+    .footer_main .column-first img.header-logo {
+        margin: auto;
+    }
+    .footer_main .footer-columns h6,
+    .footer_main .footer-columns ul {
+        margin: auto;
+    }
+}

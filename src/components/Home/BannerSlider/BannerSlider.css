@@ -1,0 +1,34 @@
+@media (min-width:1024px) {
+.banner-slider {
+  min-height: 650px;
+}
+}
+.slick-dots{
+    bottom: 25px;
+}
+.slick-dots li button::before{
+    color: #fff;
+    font-size: 14px;
+}
+.slick-dots .slick-active button::before{
+    opacity: 1;
+    color: #fff !important;
+}
+.h-screen {
+    height: 100vh;
+    min-height: 675px;
+}
+
+.luxary {
+    width: fit-content !important;
+    line-height: 1.2 !important;
+    padding: 6px 10px 7px;
+}
+
+
+
+@media (max-width:767px) {
+    .luxary {
+        padding: 3px 7px 5px;
+    }
+}
