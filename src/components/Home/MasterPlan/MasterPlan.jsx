@@ -24,10 +24,10 @@ const MasterPlan = () => {
                             <h2 className='main_heading'>Master Plan</h2>
                             <div className="master_plan_images_flex">
                                 <div className="masterplan_images_col">
-                                    <img src={masterplan1} alt="Master Plan" className="masterplan_images" />
+                                    <img src={masterplan1} alt="Master plan of luxury flats in Zirakpur at Vamana Arvindam showcasing well-planned layout, green spaces, and premium residential design" className="masterplan_images" />
                                 </div>
                                 <div className="masterplan_images_col">
-                                    <img src={masterplan2} alt="Master Plan" className="masterplan_images" />
+                                    <img src={masterplan2} alt="Master plan of Vamana Arvindam Group Zirakpur showcasing well-planned layout, green spaces, and premium residential design" className="masterplan_images" />
                                 </div>
                             </div>
                         </Col>
@@ -42,7 +42,7 @@ const MasterPlan = () => {
                                     <div className="master_plan_texts_col">
                                         <div className="masterplan_left_img">
                                             <div className="masterplan_left_border"></div>
-                                            <img src={masterplan} alt="Master Plan" className="masterplan_left" />
+                                            <img src={masterplan} alt="Entrance gate view of luxury flats for sale in Zirakpur at Vamana Arvindam offering modern architecture and premium living." className="masterplan_left" />
                                         </div>
                                     </div>
                                     <div className="master_plan_texts_col">

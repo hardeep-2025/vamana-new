@@ -14,7 +14,9 @@ const PriceListPage = () => {
                 description={"Check out the price list of the luxurious flats at Vamana Group. Choose from various options available as per your budget, affordability and premium living."}
                 canonicalUrl={`${process.env.REACT_APP_API_URL}${location.pathname}`}
             />
-            <PriceList />
+            <div className="padding-top">
+                <PriceList />
+            </div>
         </>
         
     )

@@ -34,37 +34,37 @@ const Gallery = () => {
     const exteriorImages = [
         {
             src: exterior1,
-            title: "Vamana",
+            title: "Vamana Arvindam Zirakpur exterior view showcasing modern architecture, premium design, and luxurious residential living",
             rows: 1,
             cols: 1,
         },
         {
             src: exterior2,
-            title: "Vamana",
+            title: "People walk in garden area of new residential projects in Zirakpur at Vamana Arvindam featuring lush greenery and modern living",
             rows: 1,
             cols: 2,
         },
         {
             src: exterior3,
-            title: "Vamana",
+            title: "Night view of 3BHK and 4BHK luxury apartments in Zirakpur at Vamana Arvindam featuring elegant lighting and modern architecture",
             rows: 2,
             cols: 1,
         },
         {
             src: exterior4,
-            title: "Vamana",
+            title: "Luxury flats in Zirakpur at Vamana Arvindam featuring green garden, basketball ground, and swimming pool for premium lifestyle",
         },
         {
             src: exterior5,
-            title: "Vamana",
+            title: "3 BHK luxury flats in Zirakpur at Vamana Arvindam featuring modern architecture, spacious interiors, and premium lifestyle amenities",
         },
         {
             src: exterior6,
-            title: "Vamana",
+            title: "Top view of Zirakpur flats 3BHK at Vamana Arvindam showing building exterior, landscaped grounds, and green plants",
         },
         {
             src: exterior7,
-            title: "Vamana",
+            title: "Exterior view of Vamana Arvindam Zirakpur showcasing modern architecture, landscaped surroundings, and premium residential design",
             cols: 4,
             rows: 2,
         }
@@ -76,37 +76,37 @@ const Gallery = () => {
     const interiorImages = [
         {
             src: interior1,
-            title: "Vamana",
+            title: "Luxury flats in Zirakpur living room with elegant sofa set, wall painting, and stunning mountain view from balcony",
             rows: 1,
             cols: 1,
         },
         {
             src: interior2,
-            title: "Vamana",
+            title: "Modern interior view of luxury flats for sale in Zirakpur featuring stylish living space and contemporary design",
             rows: 1,
             cols: 2,
         },
         {
             src: interior3,
-            title: "Vamana",
+            title: "Modern bedroom with elegant bed design in Zirakpur flats 3BHK at Vamana Arvindam offering luxury and comfort",
             rows: 2,
             cols: 1,
         },
         {
             src: interior4,
-            title: "Vamana",
+            title: "Interior view of new residential projects in Zirakpur at Vamana Arvindam featuring modern design and premium furnishings",
         },
         {
             src: interior5,
-            title: "Vamana",
+            title: "Balcony view from Vamana Arvindam Group Zirakpur apartments showcasing scenic surroundings and modern lifestyle",
         },
         {
             src: interior6,
-            title: "Vamana",
+            title: "People enjoying by the swimming pool at flats for sale in Zirakpur, Vamana Arvindam featuring leisure and luxury amenities",
         },
         {
             src: interior7,
-            title: "Vamana",
+            title: "Interior view of 3 BHK luxury flats in Zirakpur at Vamana Arvindam featuring modern furnishings, spacious layout, and premium design",
             cols: 4,
             rows: 2,
         }

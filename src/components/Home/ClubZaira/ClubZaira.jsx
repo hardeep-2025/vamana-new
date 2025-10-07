@@ -27,7 +27,7 @@ const ClubZaira = () => {
                             <p className="paragraph">With its thoughtful design and comprehensive amenities, including the magnificent swimming pool, Club Zaira truly brings comfort and luxury to its users, creating an unparalleled environment for leisure and community engagement.</p>
 
                             <div className="clubzaira_rounded_section">
-                                <img src={clubzairaBg} alt="Club Zaira" className="club_zaira_bg" />
+                                <img src={clubzairaBg} alt="Club Zaira at Vamana Arvindam Zirakpur featuring modern clubhouse, recreation areas, and luxury lifestyle amenities" className="club_zaira_bg" />
                                 <div className="clubzaira_rounded_inner">
                                     <div className="clubzaira_content_div">
                                         <p className="rera_number">PBRERA-SAS79-PR1018</p>

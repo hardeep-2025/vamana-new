@@ -14,15 +14,15 @@ import { faClose } from "@fortawesome/free-solid-svg-icons";
 const slides = [
     {
         image: banner1,
-        imageAlt: "Banner Image"
+        imageAlt: "New residential projects in Zirakpur featuring Vamana Arvindam’s modern apartments with premium amenities and elegant design."
     },
     {
         image: banner2,
-        imageAlt: "Banner Image"
+        imageAlt: "Vamana Arvindam Group Zirakpur offering premium 3BHK and 4BHK luxury apartments with modern amenities and prime location."
     },
     {
         image: banner3,
-        imageAlt: "Banner Image"
+        imageAlt: "Green garden area at Zirakpur flats 3BHK in Vamana Arvindam offering lush landscapes and a peaceful luxury living environment."
     }
 ]
 
