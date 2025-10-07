@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import Location from "../Home/Location/Location"
 import MetaData from "../Layouts/MetaData"
+import Connectivity from "../Home/Connectivity/Connectivity";
 
 const LocationPage = () => {
 
@@ -14,7 +15,7 @@ const LocationPage = () => {
                 description={"Discover the prime location of Vamana Flat. Strategically situated on National Highway with excellent connectivity, enjoy easy access to schools, hospitals, shopping centers, and more."}
                 canonicalUrl={`${process.env.REACT_APP_API_URL}${location.pathname}`}
             />
-            <Location />
+            <Connectivity />
         </>
         
     )
