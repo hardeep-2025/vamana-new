@@ -4,12 +4,12 @@ import Amenities from "./Amenities/Amenities"
 // import BannerSlider from "./BannerSlider/BannerSlider"
 import FloorPlan from "./FloorPlan/FloorPlan"
 import Gallery from "./Gallery/Gallery"
-import Location from "./Location/Location"
 import MasterPlan from "./MasterPlan/MasterPlan"
 import PriceList from "./PriceList/PriceList"
 import ClubZaira from "./ClubZaira/ClubZaira"
 import Banner from "./Banner/Banner"
 import Connectivity from "./Connectivity/Connectivity"
+import DigitalTour from "./DigitalTour/DigitalTour"
 
 const Home = () => {
     return (
@@ -27,8 +27,8 @@ const Home = () => {
             <Amenities />
             <FloorPlan />
             <MasterPlan />
+            <DigitalTour />
             <ClubZaira/>
-            <Location />
             <Connectivity />
             {/* <Clubhouse /> */}
             <Gallery />

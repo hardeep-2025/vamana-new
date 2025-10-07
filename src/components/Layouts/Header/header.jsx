@@ -11,6 +11,40 @@ import { Button, Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import menuIcon from "../../../assests/images/menu.png";
 import phoneIcon from "../../../assests/images/phone.png";
 import whatsappIcon from "../../../assests/images/whatsapp.png"; 
+import instantCall from "../../../assests/images/support-services.png";
+import carIcon from "../../../assests/images/car.png";
+import moneyIcon from "../../../assests/images/money.png";
+import checkIcon from "../../../assests/images/check.png";
+
+const promiseContent = [
+  {
+    icon: instantCall,
+    text: "Instant Call Back",
+  },
+  {
+    icon: carIcon,
+    text: "Free Site Visit",
+  },
+  {
+    icon: moneyIcon,
+    text: "Unmatched Price",
+  }
+]
+
+const informationContent = [
+  {
+    icon: checkIcon,
+    text: "Available Units",
+  },
+  {
+    icon: checkIcon,
+    text: "Payment Plan",
+  },
+  {
+    icon: checkIcon,
+    text: "Floor Plan",
+  }
+]
 
 const Header = () => {
 
@@ -155,7 +189,7 @@ const Header = () => {
                     </Navbar.Toggle>
 
                     <Navbar.Brand href="/">
-                        <img src={logo} alt="Ananta Aspire Logo" className="logo_header" />
+                        <img src={logo} alt="Vamana Arvindam Logo" className="logo_header" />
                     </Navbar.Brand>
                         
                     <Navbar.Offcanvas
@@ -247,8 +281,8 @@ const Header = () => {
                 "& .MuiPaper-root": {
                 width: "100%",
                 maxWidth: "450px",
-                borderRadius: "30px",
-                backgroundColor: "#f7f7f7",
+                borderRadius: "8px",
+                backgroundColor: "#C27C00E5",
                 padding: "15px",
                 },
             },
@@ -259,16 +293,45 @@ const Header = () => {
             <div className="flex justify-end ">
                 <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleOpenClose} />
             </div>
-            <EnquireForm title="Request For Brochure" button="Submit Now" setOpen={setOpen} />
+            <EnquireForm title="Request For Brochure" button="Submit Now" setOpen={setOpen} formId={"request"} />
             </div>
         </Dialog>
 
         {/* Side Popup for form*/}
-        <div className={` side-popup-form ${showsidePopup ? 'flex' : 'hidden'} border-4 border-primary-yellow `}>
-            <div className="flex justify-end btn-icon">
-                <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={newSidePopUpClose} />
+        <div className={` side-popup-form ${showsidePopup ? 'block' : 'hidden'} border-4 border-primary-yellow `}>
+
+          <div className="price_list_heading_block">
+            <p className="price_list_heading">Vamana Exclusive Price List</p>
+            <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={newSidePopUpClose} />
+          </div>
+          
+          <div className="price_list_form_flex">
+            <div className="price_list_left_col">
+              <p className="price_list_subheading">We Promise</p>
+              <div className="price_lists_form_items">
+                {promiseContent.map((item,i) => (
+                  <div className="price_lists_form_flex" key={i}>
+                    <img src={item.icon} className="icon_price" alt={item.text} />
+                    <p className="price_list_text">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+
+              <p className="price_list_subheading mt-4">Get Informations </p>
+              <div className="price_lists_form_items information_items">
+                {informationContent.map((item,i) => (
+                  <div className="price_lists_form_flex" key={i}>
+                    <img src={item.icon} className="icon_price checkIcon" alt={item.text} />
+                    <p className="price_list_text">{item.text}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <EnquireForm title="Download Price List" button="Get New Price List" setshowsidePopup={setshowsidePopup} />
+            <div className="price_list_form_col">
+              <EnquireForm title="Download Price List" button="Check Latest Pricing" setshowsidePopup={setshowsidePopup} formId={"download"} />
+            </div>
+          </div>
+            
         </div>
     </>
   );

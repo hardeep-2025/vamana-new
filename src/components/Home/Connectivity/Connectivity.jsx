@@ -77,7 +77,7 @@ const Connectivity = () => {
     ]
 
     return(
-        <div className="connectivity_section padding-top padding-bottom">
+        <div className="connectivity_section padding-top padding-bottom" id="location">
             <img src={connectivityBg} alt="Connectivity" className="connectivity_section_bg" />
             <Container>
                 <Row>

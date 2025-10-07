@@ -150,7 +150,7 @@ const Amenities = () => {
 
     return (
         <section className="home-amenities-section padding-top padding-bottom" id="amenities">
-            <img src={amenitiesBg} alt="Amenities" className="amenities_section_bg" />
+            <img src={amenitiesBg} alt="Modern amenities at Vamana Arvindam Zirakpur including clubhouse, gym, landscaped gardens, and luxury lifestyle features" className="amenities_section_bg" />
             <Container>
                 <Row>
                     <Col>

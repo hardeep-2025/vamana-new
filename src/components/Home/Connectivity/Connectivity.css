@@ -30,7 +30,7 @@
     display: grid;
     gap: 3rem 1rem;
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 3rem;
+    margin-top: 5rem;
     margin-bottom: 2rem;
 }
 .connectivity_grid_item {

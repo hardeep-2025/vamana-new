@@ -45,7 +45,7 @@ const FloorPlan = () => {
                                 <Tab.Content>
                                     <Tab.Pane eventKey="4+1BHK">
                                         <div className="floor_blans_image">
-                                            <img src={floor1} alt="Spacious 4+1 BHK plus study and attendant room layout at Ananta Aspire Zirakpur – luxury apartment design with modern amenities." className="floor_plan_img" onClick={() => setOpenPlan1(true)} />
+                                            <img src={floor1} alt="Floor plan of 4+1BHK luxury apartments in Zirakpur by Vamana Arvindam offering spacious interiors, modern design, and premium lifestyle amenities" className="floor_plan_img" onClick={() => setOpenPlan1(true)} />
                                             <Lightbox
                                                 open={openPlan1}
                                                 close={() => setOpenPlan1(false)}
@@ -78,7 +78,7 @@ const FloorPlan = () => {
                                     {/* 3BKH + 1 */}
                                     <Tab.Pane eventKey="3+1BHK">
                                         <div className="floor_blans_image">
-                                            <img src={floor2} alt="Modern 3+1 BHK plus study and attendant room layout at Ananta Aspire Zirakpur – premium luxury flat design with elegant interiors and amenities." className="floor_plan_img" onClick={() => setOpenPlan2(true)} />
+                                            <img src={floor2} alt="Floor plan of 3 + 1BHK luxury apartments in Zirakpur by Vamana Arvindam featuring elegant interiors, modern architecture, and top-class amenities" className="floor_plan_img" onClick={() => setOpenPlan2(true)} />
                                             <Lightbox
                                                 open={openPlan2}
                                                 close={() => setOpenPlan2(false)}
@@ -111,7 +111,7 @@ const FloorPlan = () => {
                                     {/* 3BHK */}
                                     <Tab.Pane eventKey="3BHK">
                                         <div className="floor_blans_image">
-                                            <img src={floor3} alt="Spacious 3BHK apartment layout at Ananta Aspire Zirakpur – modern luxury flat with premium amenities and elegant living space design." className="floor_plan_img" onClick={() => setOpenPlan3(true)} />
+                                            <img src={floor3} alt="Floor plan of 3 BHK luxury flats in Zirakpur at Vamana Arvindam showcasing spacious layout and modern design" className="floor_plan_img" onClick={() => setOpenPlan3(true)} />
                                             <Lightbox
                                                 open={openPlan3}
                                                 close={() => setOpenPlan3(false)}
@@ -158,8 +158,8 @@ const FloorPlan = () => {
                         "& .MuiPaper-root": {
                             width: "100%",
                             maxWidth: "450px",
-                            borderRadius: "30px",
-                            backgroundColor: "#f7f7f7",
+                            borderRadius: "8px",
+                            backgroundColor: "#C27C00E5",
                             padding: "15px",
                         },
                     },
@@ -170,7 +170,7 @@ const FloorPlan = () => {
                     <div className="flex justify-end">
                         <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
                     </div>
-                    <EnquireForm title="Request For Price List" setOpen={setOpen} />
+                    <EnquireForm title="Request For Price List" setOpen={setOpen} formId={"floor"} />
                 </div>
             </Dialog>
         </>

@@ -31,7 +31,7 @@
 }
 .btn-yellow-border:hover,
 .btn-yellow-border:active {
-    background-color: var(--color-yellow);
+    background-color: var(--color-yellow) !important;
     color: var(--color-white);
 }
 @media (max-width: 767px) {

@@ -1,0 +1,97 @@
+.price_list_contact_block {
+    background-color: #E7E7E7;
+    border: 1px solid #68686896;
+    border-radius: 8px;
+    padding: 2rem 4rem;
+}
+.price_list_contact_block .enquire-form h5 {
+    text-align: center;
+    font-size: 35px;
+    color: var(--color-black);
+    margin-bottom: 20px;
+}
+.price_list_contact_block .enquire-form input,
+.price_list_contact_block .enquire-form .PhoneInput {
+    background-color: var(--color-transparent) !important;
+    border-color: var(--color-border) !important;
+    font-size: 16px;
+    padding: 12px 25px !important;
+}
+.price_list_contact_block .enquire-form .PhoneInput input {
+    padding: 0 5px !important;
+}
+.price_list_contact_block .enquire-form input::placeholder {
+    color: var(--color-black);
+}
+.price_list_contact_block .enquire-form .form_label {
+    color: var(--color-black);
+    font-size: 25px;
+}
+.price_list_contact_block .price_range_group .btn {
+    border-color: #000000DE !important;
+    color: #000000FC;
+    font-size: 14px;
+    padding: 8px 15px;
+}
+.price_list_contact_block .price_range_group .btn-check:checked+.btn,
+.price_list_contact_block .price_range_group .btn:active,
+.price_list_contact_block .price_range_group .btn:hover {
+    background-color: var(--color-yellow);
+    border-color: var(--color-yellow) !important;
+    color: var(--color-white);
+}
+.price_list_contact_block .enquire-form .checkbox_div {
+    color: #555050;
+    font-size: 14px;
+    margin-top: 2rem !important;
+}
+.price_list_contact_block .custom-checkbox .checkmark {
+    border-color: var(--color-black) !important;
+}
+.price_list_contact_block .custom-checkbox input:checked + .checkmark {
+    background-color: var(--color-transparent);
+}
+.price_list_contact_block .enquire-form .submit_btn {
+    color: var(--color-yellow);
+    text-transform: capitalize;
+    padding: 15.5px 20px !important;
+    border: 2px solid var(--color-yellow) !important;
+    font-weight: 600;
+    font-family: var(--font-semibold);
+}
+.price_list_contact_block .enquire-form .submit_btn:hover {
+    background-color: var(--color-yellow) !important;
+    color: var(--color-white) !important;
+}
+@media (max-width: 767px) {
+    .price_list_contact_block {
+        padding: 2rem;
+    }
+    .price_list_contact_block .enquire-form h5 {
+        font-size: 30px;
+    }
+}
+@media (max-width: 480px) {
+    .price_list_contact_block {
+        padding: 1rem;
+    }
+    .price_list_contact_block .enquire-form input, 
+    .price_list_contact_block .enquire-form .PhoneInput {
+        padding: 9px 15px !important;
+        font-size: 16px;
+    }
+    .price_list_contact_block .enquire-form .form_label {
+        font-size: 20px;
+    }
+    .price_list_contact_block .price_range_group .btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    .price_list_contact_block .enquire-form .checkbox_div {
+        font-size: 12px;
+        margin-top: 1rem !important;
+    }
+    .price_list_contact_block .enquire-form .submit_btn {
+        padding: 11px 15px !important
+    }
+}

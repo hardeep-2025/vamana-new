@@ -1,6 +1,6 @@
 import "./Banner.css";
 import banner1 from "../../../assests/images/banner/newbanner1.jpg";
-import banner2 from "../../../assests/images/banner/newbanner2.png";
+import banner2 from "../../../assests/images/banner/newbanner2.jpg";
 import banner3 from "../../../assests/images/banner/newbanner3.png";
 import logoBlack from "../../../assests/images/logo-black.png";
 import Slider from "react-slick";
@@ -33,7 +33,7 @@ const Banner = () => {
     const handleClose = () => setOpen(false);
 
     const settings = {
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 4000,
         dots: false,
         infinite: true,
@@ -94,8 +94,8 @@ const Banner = () => {
                         "& .MuiPaper-root": {
                             width: "100%",
                             maxWidth: "450px",
-                            borderRadius: "30px",
-                            backgroundColor: "#f7f7f7",
+                            borderRadius: "8px",
+                            backgroundColor: "#C27C00E5",
                             padding: "15px",
                         },
                     },
@@ -106,7 +106,7 @@ const Banner = () => {
                     <div className="flex justify-end">
                         <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
                     </div>
-                    <EnquireForm title="Request For Price List" setOpen={setOpen} />
+                    <EnquireForm title="Request For Price List" setOpen={setOpen} formId={"banner"} />
                 </div>
             </Dialog>
         </>

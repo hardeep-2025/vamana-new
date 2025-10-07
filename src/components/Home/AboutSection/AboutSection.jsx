@@ -43,8 +43,8 @@ const AboutSection = () => {
                         "& .MuiPaper-root": {
                             width: "100%",
                             maxWidth: "450px",
-                            borderRadius: "30px",
-                            backgroundColor: "#f7f7f7",
+                            borderRadius: "8px",
+                            backgroundColor: "#C27C00E5",
                             padding: "15px",
                         },
                     },
@@ -55,7 +55,7 @@ const AboutSection = () => {
                     <div className="flex justify-end">
                         <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
                     </div>
-                    <EnquireForm title="Request For Brochure" setOpen={setOpen} />
+                    <EnquireForm title="Request For Brochure" setOpen={setOpen} formId={"about"} />
                 </div>
             </Dialog>
         </>

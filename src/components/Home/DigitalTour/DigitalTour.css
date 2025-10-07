@@ -1,0 +1,18 @@
+.digital_tour_bg {
+    background-color: #ededed;
+    border-radius: 25px;
+    padding: 40px;
+}
+.digital_tour_bg video {
+    border-radius: 25px;
+}
+@media (max-width: 767px) {
+    .digital_tour_bg {
+        padding: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .digital_tour_bg {
+        padding: 10px;
+    }
+}

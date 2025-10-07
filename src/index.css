@@ -18,7 +18,10 @@
   font-family: "Poppins-SemiBold";
   src: url('./assests/fonts/Poppins-SemiBold.ttf');
 }
-
+@font-face {
+  font-family: "Sansation";
+  src: url('./assests/fonts/Sansation-Light.ttf');
+}
 html {
   scroll-behavior: smooth;
 }

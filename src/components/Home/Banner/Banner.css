@@ -92,8 +92,8 @@
     color: var(--color-black);
 }
 .banner_bottom_text .banner_price {
-    font-size: 30px;
-    line-height: 30px;
+    font-size: 28px;
+    line-height: 28px;
     font-weight: 600;
     font-family: var(--font-semibold);
     color: var(--color-red);
@@ -156,7 +156,7 @@
         line-height: 1.4;
     }
     .banner_bottom_text .banner_price {
-        font-size: clamp(30px, 4vh, 48px);
+        font-size: clamp(28px, 4vh, 42px);
         line-height: 1;
         margin-top: clamp(1rem, 3vh, 3rem);
     }

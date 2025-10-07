@@ -5,8 +5,9 @@ import { useState } from 'react';
 import axios from 'axios';
 import { CircularProgress } from '@mui/material';
 import { useNavigate } from "react-router-dom";
+import { ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 
-const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup }) => {
+const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formId }) => {
     // const [formVisible, setFormVisible] = useState(true);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -14,10 +15,11 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup }) => 
     const [termsCheck, setTermsCheck] = useState(false);
     const [mobileNumber, setMobileNumber] = useState();
     const [phoneError, setPhoneError] = useState("");
-    // const [formSuccess, setFormSuccess] = useState("");
+    const [priceError, setPriceError] = useState("");
+    const [priceRange, setPriceRange] = useState("");
     const [formError, setFormError] = useState("");
     const [loading, setLoading] = useState(false);
-    // const [disableSubmit, setDisableSubmit] = useState(true);
+    const [termsError, setTermsError] = useState("");
 
     const navigate=useNavigate();
     const handleSubmit = (event) => {
@@ -34,6 +36,27 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup }) => 
                 return false;
             }
         }
+
+        if(!priceRange) {
+            setPriceError("Please Enter Price Range.");
+
+            setTimeout(() => {
+                setPriceError('');
+            }, 5000);
+
+            return false;
+        }
+
+        if(!termsError) {
+            setTermsError("Please select checkbox.");
+
+            setTimeout(() => {
+                setTermsError('');
+            }, 5000);
+
+            return false;
+        }
+
         // setDisableSubmit(true);
         setLoading(true);
 
@@ -44,6 +67,7 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup }) => 
                 name: name,
                 mobileNumber: mobileNumber,
                 email: email,
+                price: priceRange,
             }),
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
         })
@@ -61,21 +85,6 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup }) => 
                         setshowsidePopup(false);
                     }
                     navigate('/thankyou');
-                    
-                    // setFormSuccess("THANK YOU !! Our Team Will Contact You Shortly!");
-                    
-                    //   if( setOpen){
-                    
-                    //     setFormVisible(false);
-                    //   }
-                    //     resetForm();
-                    //     setTimeout(() => {
-                    //         setFormSuccess('');
-                    //         if (setOpen) {
-                    //             setOpen(false);
-                    //             setFormVisible(true);
-                    //         }
-                    //     }, 10000);
 
                 } else {
                     setLoading(false);
@@ -152,6 +161,7 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup }) => 
         setEmail('');
         setTermsValue(false);
         setTermsCheck(false);
+        setPriceRange('');
     }
 
     return (
@@ -169,7 +179,7 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup }) => 
                         {subtitle && <span className='block'>{subtitle}</span>}
                         {title}
                     </h5>
-                    <div className="py-2">
+                    <div className="py-2 form-row">
                         <input
                             type="text"
                             id="name"
@@ -181,7 +191,7 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup }) => 
                             onChange={(e) => NameChange(e)}
                         />
                     </div>
-                    <div className="py-2">
+                    <div className="py-2 form-row">
                         <input
                             type="text"
                             id="email"
@@ -192,7 +202,7 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup }) => 
                             onChange={(e) => EmailChange(e)}
                         />
                     </div>
-                    <div className="py-2">
+                    <div className="py-2 form-row">
                         <PhoneInput
                             type="tel"
                             id="mobile-number"
@@ -210,15 +220,47 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup }) => 
                             required
                         />
                         {phoneError && (
-                            <p className="text-red-400 text-xs" >{phoneError}</p>
+                            <p className="text-red-400 error text-xs" >{phoneError}</p>
                         )}
                     </div>
 
-                    <p className={`flex items-center text-[10px] mt-5 ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}><input type='checkbox' required className='align-middle size-4' name="termsCheck" checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)} /> I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</p>
+                    <div className="py-2 form-row">
+                        <p className='form_label'>Price Range</p>
+
+                        <ToggleButtonGroup name={`price_range_${formId}`} className='price_range_group' type="radio" value={priceRange} onChange={(val) => setPriceRange(val)}>
+                            <ToggleButton id={`${formId+"_1"}`} value={"1.5 Cr to 2 Cr"} className={`${priceRange === "1.5 Cr to 2 Cr" && 'active'}`}>
+                                1.5 Cr to 2 Cr
+                            </ToggleButton>
+                            <ToggleButton id={`${formId+"_2"}`} value={"2 Cr to 2.5 Cr"}>
+                                2 Cr to 2.5 Cr
+                            </ToggleButton>
+                            <ToggleButton id={`${formId+"_3"}`} value={"2.5 Cr to 3 Cr"}>
+                                2.5 Cr to 3 Cr
+                            </ToggleButton>
+                            <ToggleButton id={`${formId+"_4"}`} value={"3 Cr to 3.5 Cr"}>
+                                3 Cr to 3.5 Cr
+                            </ToggleButton>
+                        </ToggleButtonGroup>
+                        {priceError && (
+                            <p className="text-red-700 error text-sm">{priceError}</p>
+                        )}
+                    </div>
+
+                    <p className={`checkbox_div flex items-center text-[10px] ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}>
+                        <label className="custom-checkbox">
+                            <input type='checkbox' className='align-middle size-4 checkbox' name={`termsCheck_${formId}`} checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)} /> 
+                            <span className="checkmark"></span>
+                        </label>
+                        <span>I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</span>
+                    </p>
+
+                    {termsError && (
+                        <p className="text-red-700 error text-sm">{termsError}</p>
+                    )}
 
                     <div className="mt-[20px] flex items-center gap-5 justify-center">
                         
-                        <input type="submit" value={button ? button : 'Download Now'} className={`w-max hover:text-white font-bold text-primary-yellow uppercase text-xs tracking-widest py-2.5 sm:py-3.5 px-3.5 sm:px-[22px] 1xl:px-8 hover:bg-primary-yellow border-2 border-primary-yellow cursor-pointer`}  />
+                        <input type="submit" value={button ? button : 'Download Now'} className={`submit_btn`}  />
                         {loading && (
                             <CircularProgress
                                 sx={{
