@@ -16,7 +16,7 @@
     text-underline-offset: 3px;
 }
 .home-about-section .btn-yellow-border {
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 .btn-yellow-border {
     border: 2px solid var(--color-yellow) !important;
@@ -37,5 +37,8 @@
 @media (max-width: 767px) {
     .paragraph {
         font-size: 16px;
+    }
+    .home-about-section .btn-yellow-border {
+        margin-top: 1rem;
     }
 }

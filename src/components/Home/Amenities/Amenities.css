@@ -38,6 +38,9 @@
     justify-content: center;
     cursor: pointer;
 }
+.amenities_grid_item:hover {
+    background-color: var(--color-yellow);
+}
 .amenities_grid_item .amenities_icon {
     width: 64px;
     height: 64px;

@@ -74,6 +74,7 @@
 @media (max-width: 767px) {
     .connectivity_grid {
         grid-template-columns: repeat(2, 1fr);
+        margin-top: 3rem;
     }
     .connectivity_section .main_heading {
         font-size: 20px;

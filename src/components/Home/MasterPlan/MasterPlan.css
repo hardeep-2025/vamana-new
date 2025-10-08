@@ -1,3 +1,6 @@
+.home-masterplan-section {
+    padding-bottom: 6rem;
+}
 .master_plan_images_flex {
     display: flex;
     margin-bottom: -560px;
@@ -123,7 +126,7 @@
     }
     .master_plan_texts_flex {
         flex-direction: column-reverse;
-        gap: 2rem;
+        gap: 4rem;
     }
     .masterplan_left_img .masterplan_left {
         min-height: auto;
@@ -132,6 +135,9 @@
         max-width: 480px;
         margin-left: auto;
         margin-right: auto;
+    }
+    .master_plan_texts_col .btn-yellow-border {
+        margin-top: 1rem;
     }
 }
 @media (max-width: 575px) {

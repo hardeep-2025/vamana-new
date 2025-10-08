@@ -1,8 +1,10 @@
 .price_list_contact_block {
-    background-color: #E7E7E7;
-    border: 1px solid #68686896;
+    background-color: #F6F5F5;
+    border: 1px solid #C0C0C0;
     border-radius: 8px;
     padding: 2rem 4rem;
+    max-width: 860px;
+    margin: auto;
 }
 .price_list_contact_block .enquire-form h5 {
     text-align: center;

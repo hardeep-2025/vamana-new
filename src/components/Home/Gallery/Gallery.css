@@ -2,10 +2,12 @@
 .yarl__portal_open {
     z-index: 99999999;
 }
-
+.gallery_section  .main_heading {
+    margin-bottom: 1rem;
+}
 /* Gallery Tabs */
 .gallery_tabs {
-    padding: 0rem 0 3rem;
+    padding: 0rem 0 2rem;
     gap: 10px;
 	justify-content: center;
 }

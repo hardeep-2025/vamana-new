@@ -45,8 +45,8 @@
     color: var(--color-yellow);
     text-decoration: unset;
     font-size: 15px;
-    font-family: "Poppins";
-    font-weight: 900;
+    font-family: var(--font-bold);
+    font-weight: 700;
     display: flex;
     gap: 6px;
     align-items: center;
@@ -224,8 +224,8 @@
 }
 @media (max-width: 430px) {
     .main_header .navbar-toggler .menu_icon {
-        width: 28px;
-        height: 28px;
+        width: 30px;
+        height: 30px;
     }
     .header_right .header_call {
         font-size: 12px;
@@ -233,16 +233,16 @@
     }
     .main_header .header_right .header_request_btn,
     .header_rera_number {
-        font-size: 12px;
+        font-size: 11px;
     }
     .main_header .navbar-brand .logo_header {
-        height: 16px;
+        height: 18px;
     }
     .main_header .navbar-toggler {
         padding-right: 5px;
     }
 }
-@media (max-width: 390px) {
+@media (max-width: 400px) {
     .main_header .navbar-brand .logo_header {
         height: 14px;
     }

@@ -75,8 +75,8 @@ const Gallery = () => {
 
     const interiorImages = [
         {
-            src: interior1,
-            title: "Luxury flats in Zirakpur living room with elegant sofa set, wall painting, and stunning mountain view from balcony",
+            src: interior7,
+            title: "Interior view of 3 BHK luxury flats in Zirakpur at Vamana Arvindam featuring modern furnishings, spacious layout, and premium design",
             rows: 1,
             cols: 1,
         },
@@ -105,10 +105,10 @@ const Gallery = () => {
             title: "People enjoying by the swimming pool at flats for sale in Zirakpur, Vamana Arvindam featuring leisure and luxury amenities",
         },
         {
-            src: interior7,
-            title: "Interior view of 3 BHK luxury flats in Zirakpur at Vamana Arvindam featuring modern furnishings, spacious layout, and premium design",
-            cols: 4,
+            src: interior1,
+            title: "Luxury flats in Zirakpur living room with elegant sofa set, wall painting, and stunning mountain view from balcony",
             rows: 2,
+            cols: 4,
         }
     ]
 

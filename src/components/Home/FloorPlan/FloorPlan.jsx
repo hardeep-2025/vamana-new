@@ -25,7 +25,7 @@ const FloorPlan = () => {
 
     return(
         <>
-            <section className="home-floorplan-section padding-top padding-bottom" id="floorplan">
+            <section className="home-floorplan-section padding-top" id="floorplan">
                 <Container>
                     <Row>
                         <Col>
