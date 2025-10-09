@@ -3,74 +3,121 @@ import 'react-phone-number-input/style.css';
 import PhoneInput, { isPossiblePhoneNumber, isValidPhoneNumber } from "react-phone-number-input";
 import { useState } from 'react';
 import axios from 'axios';
-import { CircularProgress } from '@mui/material';
 import { useNavigate } from "react-router-dom";
 import { ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import telephone from "../../../assests/images/telephone.png";
+import carIcon from "../../../assests/images/car-icon.png";
+import appIcon from "../../../assests/images/app-icon.png";
+import rupee from "../../../assests/images/rupee.png";
+import business from "../../../assests/images/businessman.png";
+import operator from "../../../assests/images/operator.png";
+
+const weGetOptions = [
+    {
+        icon: telephone,
+        text: "Immediate Call Back from Property Expert",
+    },
+    {
+        icon: carIcon,
+        text: "Complimentary Site Visit with Pickup & Drop",
+    },
+    {
+        icon: appIcon,
+        text: "Project Brochure & Floor Plans on WhatsApp",
+    },
+    {
+        icon: rupee,
+        text: "Direct Developer Pricing – Best Price Guarantee",
+    },
+    {
+        icon: business,
+        text: "Dedicated Relationship Manager",
+    },
+    {
+        icon: operator,
+        text: "Expert Assistance with Home Loan & Documentation",
+    }
+]
 
 const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formId }) => {
-    // const [formVisible, setFormVisible] = useState(true);
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [termsValue, setTermsValue] = useState(false);
-    const [termsCheck, setTermsCheck] = useState(false);
-    const [mobileNumber, setMobileNumber] = useState();
-    const [phoneError, setPhoneError] = useState("");
-    const [priceError, setPriceError] = useState("");
-    const [priceRange, setPriceRange] = useState("1 Cr to 1.3 Cr");
-    const [formError, setFormError] = useState("");
-    const [loading, setLoading] = useState(false);
-    const [termsError, setTermsError] = useState("");
 
     const navigate=useNavigate();
-    const handleSubmit = (event) => {
-        if (event) event.preventDefault();
 
-        if (mobileNumber) {
-            if (isValidPhoneNumber(mobileNumber) === false || isPossiblePhoneNumber(mobileNumber) === false) {
-                setPhoneError("Please Enter Valid Mobile Number.");
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        mobileNumber: "",
+        terms: false,
+    });
 
-                setTimeout(() => {
-                    setPhoneError('');
-                }, 5000);
+    const [errors, setErrors] = useState({});
 
-                return false;
-            }
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+            setFormData({
+            ...formData,
+            [name]: type === "checkbox" ? checked : value,
+        });
+
+        if (errors[name]) {
+            setErrors({ ...errors, [name]: "" });
         }
+    };
 
-        if(!priceRange) {
-            setPriceError("Please Enter Price Range.");
-
-            setTimeout(() => {
-                setPriceError('');
-            }, 5000);
-
-            return false;
+    const handlePhoneChange = (value) => {
+        setFormData({ ...formData, mobileNumber: value });
+        if (errors.mobileNumber) {
+            setErrors({ ...errors, mobileNumber: "" });
         }
+    };
 
-        if(!termsError) {
-            setTermsError("Please select checkbox.");
+    const validate = () => {
+        const newErrors = {};
 
-            setTimeout(() => {
-                setTermsError('');
-            }, 5000);
+        // Name required
+        if (!formData.name.trim()) newErrors.name = "Name is required";
 
-            return false;
+        // Email optional but must be valid if filled
+        if (formData.email && !/\S+@\S+\.\S+/.test(formData.email))
+            newErrors.email = "Enter a valid email";
+
+        // Mobile number validation using react-phone-number-input helpers
+        if (!formData.mobileNumber) {
+            newErrors.mobileNumber = "Mobile number is required";
+        } else if (!isPossiblePhoneNumber(formData.mobileNumber)) {
+            newErrors.mobileNumber = "Phone number format looks incorrect";
+        } else if (!isValidPhoneNumber(formData.mobileNumber)) {
+            newErrors.mobileNumber = "Invalid phone number for selected country";
         }
+        if (!formData.terms) newErrors.terms = "You must accept the terms";
 
-        // setDisableSubmit(true);
-        setLoading(true);
+        return newErrors;
+    };
 
-        axios({
-            method: "post",
-            url: "https://vamanaresidences.com/api/enquire-us-api.php",
-            data: JSON.stringify({
-                name: name,
-                mobileNumber: mobileNumber,
-                email: email,
-                price: priceRange,
-            }),
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        })
+    const [formError, setFormError] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [priceRange, setPriceRange] = useState("1 Cr to 1.5 Cr");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const validationErrors = validate();
+
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+        } else {
+            setLoading(true);
+
+            axios({
+                method: "post",
+                url: "https://vamanaresidences.com/api/enquire-us-api.php",
+                data: JSON.stringify({
+                    name: formData.name,
+                    mobileNumber: formData.mobileNumber,
+                    email: formData.email,
+                    price: priceRange,
+                }),
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            })
             .then(function (response) {
                 //handle success
 
@@ -107,65 +154,16 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formI
                     setFormError('');
                 }, 5000);
             });
-
-    }
-
-    const EmailChange = (e) => {
-
-        setEmail(e.target.value);
-
-        if (name.length >= 1 && mobileNumber !== undefined && termsValue === true) {
-            // setDisableSubmit(false);
-        } else {
-           // setDisableSubmit(true);
-        }
-    }
-
-    const NameChange = (e) => {
-
-        const value = e.target.value;
-       
-        const filteredValue = value.replace(/[^a-zA-Z\s]/g, '');
-        setName(filteredValue);
-        if (e.target.value.length >= 1 && mobileNumber !== undefined && termsValue === true) {
-            // setDisableSubmit(false);
-        } else {
-            // setDisableSubmit(true);
-        }
-    }
-
-    const handleUpdate = number => {
-        setMobileNumber(number);
-
-        if (name.length >= 1 && number !== undefined && termsValue === true) {
-            // setDisableSubmit(false);
-        } else {
-            // setDisableSubmit(true);
-        }
-    };
-
-    const CheckboxChange = (e) => {
-
-        setTermsValue(!termsValue);
-        setTermsCheck(!termsValue);
-        if (name.length >= 1 && mobileNumber !== undefined && !termsValue === true) {
-            // setDisableSubmit(false);
-        } else {
-            // setDisableSubmit(true);
         }
     }
 
     const resetForm = () => {
-        setName("")
-        setMobileNumber('');
-        setEmail('');
-        setTermsValue(false);
-        setTermsCheck(false);
-        setPriceRange('1 Cr to 1.3 Cr');
+        setFormData({ name: "", email: "", mobileNumber: "", terms: false });
+        setPriceRange('1 Cr to 1.5 Cr');
     }
 
     return (
-        <form className="enquire-form py-6" onSubmit={handleSubmit}>
+        <form className="enquire-form" onSubmit={handleSubmit}>
             <div className="form-section text-left">
                 {formError && (
                     <p className="text-red-400 py-2 text-[12px] text-center">{formError}</p>
@@ -179,28 +177,30 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formI
                         {subtitle && <span className='block'>{subtitle}</span>}
                         {title}
                     </h5>
-                    <div className="py-2 form-row">
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Name*"
-                            className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
-                            required
-                            value={name}
-                            onChange={(e) => NameChange(e)}
-                        />
-                    </div>
-                    <div className="py-2 form-row">
-                        <input
-                            type="text"
-                            id="email"
-                            name="email"
-                            placeholder="Email (Optional)"
-                            className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
-                            value={email}
-                            onChange={(e) => EmailChange(e)}
-                        />
+                    <div className='form-row-flex'>
+                        <div className="py-2 form-row">
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Name*"
+                                value={formData.name}
+                                onChange={handleChange}
+                                className={errors.name ? "invalid" : ""}
+                            />
+                            {errors.name && <p className="text-red-400 error text-sm">{errors.name}</p>}
+                        </div>
+                        <div className="py-2 form-row">
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Email (Optional)"
+                                value={formData.email}
+                                onChange={handleChange}
+                                className={errors.email ? "invalid" : ""}
+                            />
+                            {errors.email && <p className="text-red-400 error text-sm">{errors.email}</p>}
+                        </div>
                     </div>
                     <div className="py-2 form-row">
                         <PhoneInput
@@ -208,71 +208,75 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formI
                             id="mobile-number"
                             name="mobile-number"
                             placeholder="Mobile Number*"
-                            className="text-md form-input border border-gray-300 w-full px-3.5 py-2 bg-white"
+                            value={formData.mobileNumber}
+                            onChange={handlePhoneChange}
+                            className={errors.mobileNumber ? "phone-input-error" : ""}
                             country="IN"
                            // maxlength="10"
                             defaultCountry="IN"
-                            value={mobileNumber}
-                            onChange={handleUpdate}
                             limitMaxLength={true}
                             national="true"
                             international={false}
-                            required
                         />
-                        {phoneError && (
-                            <p className="text-red-400 error text-xs" >{phoneError}</p>
+                        {errors.mobileNumber && (
+                            <p className="text-red-400 error text-sm">{errors.mobileNumber}</p>
                         )}
                     </div>
 
                     <div className="py-2 form-row">
-                        <p className='form_label'>Select Your Budget</p>
+                        <p className='form_label'>Select Budget*</p>
 
                         <ToggleButtonGroup name={`price_range_${formId}`} className='price_range_group' type="radio" value={priceRange} onChange={(val) => setPriceRange(val)}>
-                            <ToggleButton id={`${formId+"_1"}`} value={"1 Cr to 1.3 Cr"} className={`${priceRange === "1 Cr to 1.3 Cr" && 'active'}`}>
-                                1 Cr to 1.3 Cr
+                            <ToggleButton id={`${formId+"_1"}`} value={"1 Cr to 1.5 Cr"} className={`${priceRange === "1 Cr to 1.5 Cr" && 'active'}`}>
+                                1 Cr to 1.5 Cr
                             </ToggleButton>
-                            <ToggleButton id={`${formId+"_2"}`} value={"1.3 Cr to 1.7 Cr"}>
-                                1.3 Cr to 1.7 Cr
-                            </ToggleButton>
-                            <ToggleButton id={`${formId+"_3"}`} value={"1.7 Cr to 2 Cr"}>
-                                1.7 Cr to 2 Cr
+                            <ToggleButton id={`${formId+"_2"}`} value={"1.5 Cr to 2 Cr"}>
+                                1.5 Cr to 2 Cr
                             </ToggleButton>
                             <ToggleButton id={`${formId+"_4"}`} value={"2 Cr Onwards"}>
                                 2 Cr Onwards
                             </ToggleButton>
                         </ToggleButtonGroup>
-                        {priceError && (
-                            <p className="text-red-700 error text-sm">{priceError}</p>
-                        )}
+                        
                     </div>
 
-                    <p className={`checkbox_div flex items-center text-[10px] ${termsCheck ? 'font-semibold' : 'font-extralight  text-gray-400'}`}>
+                    <p className={`checkbox_div flex items-center text-[10px] ${formData.terms ? 'font-semibold' : 'font-extralight  text-gray-400'}`}>
                         <label className="custom-checkbox">
-                            <input type='checkbox' className='align-middle size-4 checkbox' name={`termsCheck_${formId}`} checked={termsCheck} value={termsValue} onChange={(e) => CheckboxChange(e)} /> 
+                            <input 
+                                type='checkbox' 
+                                name="terms"
+                                checked={formData.terms}
+                                onChange={handleChange}
+                                className={errors.terms ? "checkbox-error checkbox" : "checkbox"} 
+                            /> 
                             <span className="checkmark"></span>
                         </label>
                         <span>I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</span>
                     </p>
 
-                    {termsError && (
-                        <p className="text-red-700 error text-sm">{termsError}</p>
+                    {errors.terms && (
+                        <p className="text-red-700 error text-sm">{errors.terms}</p>
                     )}
 
-                    <div className="mt-[20px] flex items-center gap-5 justify-center">
-                        
-                        <input type="submit" value={button ? button : 'Download Now'} className={`submit_btn`}  />
-                        {loading && (
-                            <CircularProgress
-                                sx={{
-                                    color: (theme) =>
-                                        theme.palette.grey[theme.palette.mode === 'dark' ? 400 : 800],
-                                }}
-                                size={35}
-                                thickness={4}
-                                value={100}
-                            />
-                        )}
+                    <div className="text-center flex items-center gap-5 justify-end">
+                        <input type="submit" value={loading ? "Processing..." : button ? button : 'Download Now'} disabled={loading} className={`submit_btn cursor-pointer`} />
+                      
                     </div>
+
+                    {formId && formId === "download" &&
+                        <div className="py-2 form-row we_get_row">
+                            <p className='form_label'>What You Get</p>
+                            <div className='we_get_div_grid'>
+                                {weGetOptions.map((item,i) => (
+                                    <div className='we_get_div_item' key={i}>
+                                        <img src={item.icon} alt={item.text} className='we_get_icon' />
+                                        <p className='we_get_text'>{item.text}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    }
+                    
                 </div>
             </div>
         </form>

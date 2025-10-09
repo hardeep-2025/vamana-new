@@ -1,8 +1,8 @@
 .price_list_contact_block {
-    background-color: #F6F5F5;
+    background-color: #fff;
     border: 1px solid #C0C0C0;
     border-radius: 8px;
-    padding: 2rem 4rem;
+    padding: 2rem 3rem;
     max-width: 860px;
     margin: auto;
 }
@@ -26,14 +26,19 @@
     color: var(--color-black);
 }
 .price_list_contact_block .enquire-form .form_label {
-    color: var(--color-black);
-    font-size: 25px;
+    color: var(--color-yellow);
+}
+.price_list_contact_block .price_range_group {
+    width: 100%;
+    flex-wrap: unset;
 }
 .price_list_contact_block .price_range_group .btn {
-    border-color: #000000DE !important;
-    color: #000000FC;
-    font-size: 14px;
-    padding: 8px 15px;
+    border-color: var(--color-border) !important;
+    color: #686868;
+    font-size: 16px;
+    padding: 15px;
+    background-color: var(--color-white);
+    width: 100%;
 }
 .price_list_contact_block .price_range_group .btn-check:checked+.btn,
 .price_list_contact_block .price_range_group .btn:active,
@@ -48,7 +53,7 @@
     margin-top: 2rem !important;
 }
 .price_list_contact_block .custom-checkbox .checkmark {
-    border-color: var(--color-black) !important;
+    border-color: var(--color-border) !important;
 }
 .price_list_contact_block .custom-checkbox input:checked + .checkmark {
     background-color: var(--color-transparent);
@@ -60,10 +65,15 @@
     border: 2px solid var(--color-yellow) !important;
     font-weight: 600;
     font-family: var(--font-semibold);
+    width: 100%;
 }
 .price_list_contact_block .enquire-form .submit_btn:hover {
     background-color: var(--color-yellow) !important;
     color: var(--color-white) !important;
+}
+.price_list_contact_block .enquire-form .form-row-flex {
+    flex-direction: row;
+    gap: 10px;
 }
 @media (max-width: 767px) {
     .price_list_contact_block {
@@ -71,6 +81,16 @@
     }
     .price_list_contact_block .enquire-form h5 {
         font-size: 30px;
+    }
+}
+@media (max-width: 575px) {
+    .price_list_contact_block .enquire-form .form-row-flex {
+        flex-direction: column;
+        gap: 0px;
+    }
+    .price_list_contact_block .price_range_group .btn {
+        font-size: 14px;
+        padding: 10px;
     }
 }
 @media (max-width: 480px) {
@@ -86,8 +106,8 @@
         font-size: 20px;
     }
     .price_list_contact_block .price_range_group .btn {
-        font-size: 12px;
-        padding: 6px 12px;
+        font-size: 10px;
+        padding: 8px 5px;
     }
     .price_list_contact_block .enquire-form .checkbox_div {
         font-size: 12px;

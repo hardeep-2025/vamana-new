@@ -11,40 +11,6 @@ import { Button, Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
 import menuIcon from "../../../assests/images/menu.png";
 import phoneIcon from "../../../assests/images/phone.png";
 import whatsappIcon from "../../../assests/images/whatsapp.png"; 
-import instantCall from "../../../assests/images/support-services.png";
-import carIcon from "../../../assests/images/car.png";
-import moneyIcon from "../../../assests/images/money.png";
-import checkIcon from "../../../assests/images/check.png";
-
-const promiseContent = [
-  {
-    icon: instantCall,
-    text: "Instant Call Back",
-  },
-  {
-    icon: carIcon,
-    text: "Free Site Visit",
-  },
-  {
-    icon: moneyIcon,
-    text: "Unmatched Price",
-  }
-]
-
-const informationContent = [
-  {
-    icon: checkIcon,
-    text: "Available Units",
-  },
-  {
-    icon: checkIcon,
-    text: "Payment Plan",
-  },
-  {
-    icon: checkIcon,
-    text: "Floor Plan",
-  }
-]
 
 const Header = () => {
 
@@ -189,7 +155,7 @@ const Header = () => {
                     </Navbar.Toggle>
 
                     <Navbar.Brand href="/">
-                        <img src={logo} alt="Vamana Arvindam Logo" className="logo_header" />
+                        <img src={logo} alt="Vamana Residences Logo" className="logo_header" />
                     </Navbar.Brand>
                         
                     <Navbar.Offcanvas
@@ -240,9 +206,9 @@ const Header = () => {
 
                     <div className="header_right">
                         <div className="header_right_top">
-                            <Link to={"tel:+919609600074"} className="header_call">
+                            <Link to={"tel:+919736338888"} className="header_call">
                                 <img src={phoneIcon} alt="Phone" className="phone_icon" />
-                                +91 9609600074
+                                +91 9736338888
                             </Link>
                             <Button className="header_request_btn" onClick={handleEnquireClick}>Request Details</Button>
                         </div>
@@ -255,7 +221,7 @@ const Header = () => {
 
         {/* Whatsapp Icon */}
         <div className="fixed_btns_header z-20">
-            <a href="https://wa.me/+919609600074" rel="noreferrer" target="_blank">
+            <a href="https://wa.me/+919736338888" rel="noreferrer" target="_blank">
                 <img src={whatsappIcon} alt="Whatsapp" className="header_btns_float whatsapp" />
             </a>
         </div>
@@ -282,14 +248,15 @@ const Header = () => {
                 width: "100%",
                 maxWidth: "450px",
                 borderRadius: "8px",
-                backgroundColor: "#C27C00E5",
+                backgroundColor: "#fff",
+                border: '1px solid #644630',
                 padding: "15px",
                 },
             },
             }}
             aria-modal="true"
         >
-            <div className="flex flex-col px-2.5 popup-form">
+            <div className="flex flex-col popup-form">
             <div className="flex justify-end ">
                 <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleOpenClose} />
             </div>
@@ -298,15 +265,15 @@ const Header = () => {
         </Dialog>
 
         {/* Side Popup for form*/}
-        <div className={` side-popup-form ${showsidePopup ? 'block' : 'hidden'} border-4 border-primary-yellow `}>
+        <div className={` side-popup-form ${showsidePopup ? 'flex' : 'hidden'} border-4 border-primary-yellow `}>
 
           <div className="price_list_heading_block">
-            <p className="price_list_heading">Vamana Exclusive Price List</p>
+            <img src={logo} alt="Vamana Residences Logo" className="form_logo" />
             <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={newSidePopUpClose} />
-          </div>
+          </div>     
           
           <div className="price_list_form_flex">
-            <div className="price_list_left_col">
+            {/* <div className="price_list_left_col">
               <p className="price_list_subheading">We Promise</p>
               <div className="price_lists_form_items">
                 {promiseContent.map((item,i) => (
@@ -326,7 +293,9 @@ const Header = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
+            <p className="price_list_heading">Vamana Residence Exclusive Price List!</p>
+            <p className="price_list_subtext">Explore Comprehensive and Updated Price Information for Vamana Residences</p>
             <div className="price_list_form_col">
               <EnquireForm title="Download Price List" button="Check Latest Pricing" setshowsidePopup={setshowsidePopup} formId={"download"} />
             </div>

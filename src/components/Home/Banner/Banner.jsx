@@ -59,7 +59,7 @@ const Banner = () => {
                             <p className="booking_text">Booking Open</p>
                             <div className="logo_location">
                                 <img src={logoBlack} alt="Vamana Arvindam Zirakpur" className="logo_image" />
-                                <p className="logo_location_text">At Zirakpur chandigrah</p>
+                                <p className="logo_location_text">At Zirakpur chandigarh</p>
                             </div>
                             <div className="points_block">
                                 <p className="points_block_text">Land Parcel : 7.7 Acres</p>
@@ -95,14 +95,15 @@ const Banner = () => {
                             width: "100%",
                             maxWidth: "450px",
                             borderRadius: "8px",
-                            backgroundColor: "#C27C00E5",
+                            backgroundColor: "#fff",
+                            border: '1px solid #644630',
                             padding: "15px",
                         },
                     },
                 }}
                 aria-modal="true"
             >
-                <div className="flex flex-col px-2.5 popup-form">
+                <div className="flex flex-col popup-form">
                     <div className="flex justify-end">
                         <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
                     </div>
