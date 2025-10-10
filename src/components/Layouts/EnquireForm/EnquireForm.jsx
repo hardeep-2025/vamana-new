@@ -165,14 +165,17 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formI
     return (
         <form className="enquire-form" onSubmit={handleSubmit}>
             <div className="form-section text-left">
-                {formError && (
-                    <p className="text-red-400 py-2 text-[12px] text-center">{formError}</p>
-                )}
+                
 
                 {/* {formSuccess && (
                     <p className="text-green-700 py-2 text-[12px] text-center">{formSuccess}</p>
                 )} */}
                 <div id='enquiry-form'>
+
+                    {formError && (
+                    <p className="text-red-400 py-2 text-[12px] text-center">{formError}</p>
+                )}
+                
                     <h5 className="text-2xl title font-extrabold capitalize mb-2.5">
                         {subtitle && <span className='block'>{subtitle}</span>}
                         {title}

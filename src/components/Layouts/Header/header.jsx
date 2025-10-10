@@ -318,7 +318,7 @@ const Header = () => {
                   <p className="price_list_heading">Vamana Residence Exclusive Price List!</p>
                   <p className="price_list_subtext">Explore Comprehensive and Updated Price Information for Vamana Residences</p>
                   <div className="price_list_form_col">
-                    <EnquireForm  formId={"download"} title="Download Price List" button="Check Latest Pricing" setshowsidePopup={showsidePopup} />
+                    <EnquireForm  formId={"download"} title="Download Price List" button="Check Latest Pricing" setshowsidePopup={setshowsidePopup} />
                   </div>
                 </div>
               </Dialog>
