@@ -89,7 +89,11 @@ const Header = () => {
   ];
 
   useEffect(() => {
-    setTimeout(() => setshowsidePopup(true), 5000);
+    setTimeout(() => {
+      setshowsidePopup(true);
+      setOpen(false);
+    }, 5000);
+
   }, [])
 
   // handle menu click
@@ -265,7 +269,7 @@ const Header = () => {
         </Dialog>
 
         {/* Side Popup for form*/}
-        <div className={` side-popup-form ${showsidePopup ? 'flex' : 'hidden'} border-4 border-primary-yellow `}>
+        {/* <div className={` side-popup-form ${showsidePopup ? 'flex' : 'hidden'} border-4 border-primary-yellow `}>
 
           <div className="price_list_heading_block">
             <img src={logo} alt="Vamana Residences Logo" className="form_logo" />
@@ -273,27 +277,6 @@ const Header = () => {
           </div>     
           
           <div className="price_list_form_flex">
-            {/* <div className="price_list_left_col">
-              <p className="price_list_subheading">We Promise</p>
-              <div className="price_lists_form_items">
-                {promiseContent.map((item,i) => (
-                  <div className="price_lists_form_flex" key={i}>
-                    <img src={item.icon} className="icon_price" alt={item.text} />
-                    <p className="price_list_text">{item.text}</p>
-                  </div>
-                ))}
-              </div>
-
-              <p className="price_list_subheading mt-4">Get Informations </p>
-              <div className="price_lists_form_items information_items">
-                {informationContent.map((item,i) => (
-                  <div className="price_lists_form_flex" key={i}>
-                    <img src={item.icon} className="icon_price checkIcon" alt={item.text} />
-                    <p className="price_list_text">{item.text}</p>
-                  </div>
-                ))}
-              </div>
-            </div> */}
             <p className="price_list_heading">Vamana Residence Exclusive Price List!</p>
             <p className="price_list_subtext">Explore Comprehensive and Updated Price Information for Vamana Residences</p>
             <div className="price_list_form_col">
@@ -301,7 +284,44 @@ const Header = () => {
             </div>
           </div>
             
-        </div>
+        </div> */}
+
+        {/* Price List Popup */}
+          <Dialog
+                open={showsidePopup}
+                onClose={(event, reason) => {
+                  // Prevent closing when clicking outside or pressing Esc
+                  if (reason !== "backdropClick" && reason !== "escapeKeyDown") {
+                    newSidePopUpClose();
+                  }
+                }}
+                className="price_list_popup_dialog"
+                aria-hidden="false"
+                sx={{
+                  "& .MuiDialog-container": {
+                    "& .MuiPaper-root": {
+                      width: "100%",
+                      borderRadius: "8px",
+                      borderColor:'#fff',
+                      backgroundColor: "#fff",
+                      boxShadow: '0px 0px 4px 0px #644630'
+                    },
+                  },
+                }}
+                aria-modal="true"
+              >
+                <div className="price_list_heading_block">
+                  <img src={logo} alt="Ananta Aspire Logo" className="form_logo" />
+                  <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={newSidePopUpClose} />
+                </div>
+                <div className="price_list_form_flex">
+                  <p className="price_list_heading">Vamana Residence Exclusive Price List!</p>
+                  <p className="price_list_subtext">Explore Comprehensive and Updated Price Information for Vamana Residences</p>
+                  <div className="price_list_form_col">
+                    <EnquireForm  formId={"download"} title="Download Price List" button="Check Latest Pricing" setshowsidePopup={showsidePopup} />
+                  </div>
+                </div>
+              </Dialog>
     </>
   );
 };

@@ -170,6 +170,9 @@
     .main_header .navbar-brand .logo_header {
         height: 20px;
     }
+    .main_header .navbar {
+        padding: 7.5px 0px;
+    }
 }
 @media (max-width: 991px) {
     .main_header .header_right {
@@ -373,7 +376,7 @@
         min-height: 700px;
         height: 100%;
     }
-    .price_list_form_col .enquire-form .form_label {
+    /* .price_list_form_col .enquire-form .form_label {
         margin-top: 1rem;
     }
     .price_list_form_col .enquire-form .submit_btn {
@@ -381,7 +384,7 @@
     }
     .price_list_subtext {
         margin-bottom: 1.5rem;
-    }
+    } */
 }
 @media (min-width: 1500px) and (min-height: 700px) { 
     .side-popup-form {
@@ -440,7 +443,7 @@
 }
 .price_list_heading_block .form_logo {
     width: 162px;
-}
+}/* 
 .price_list_heading {
     font-size: 25px;
     font-weight: 600;
@@ -701,7 +704,7 @@
         font-size: 10px;
         padding: 5px;
     }
-}
+} */
 /* Header fixed btns */
 .fixed_btns_header {
     right: 5%;
@@ -738,5 +741,282 @@
     .fixed_btns_header .header_btns_float {
         width: 30px;
         height: 30px;
+    }
+}
+
+
+/* popup */
+.price_list_popup_dialog.MuiDialog-root {
+    width: 100%;
+}
+.price_list_popup_dialog .MuiDialog-container {
+    width: 100%;
+}
+.form_popup .MuiDialog-container .MuiPaper-root {
+    margin: 92px 30px 30px;
+    max-height: calc(100% - 100px);
+}
+.price_list_popup_dialog .MuiDialog-container .MuiPaper-root {
+    max-width: 42vw;
+    margin: 92px 30px 30px;
+    max-height: calc(100% - 100px);
+    padding: 1.5vw;
+}
+.price_list_heading_block .form_logo {
+    width: 8vw;
+}
+.price_list_form_col {
+    width: 100%;
+}
+.price_list_heading {
+    font-size: 1.3vw;
+    font-weight: 600;
+    font-family: var(--font-semibold);
+    color: var(--color-yellow);
+    line-height: 1.2;
+}
+.price_list_subtext {
+    font-size: 0.7vw;
+    margin-bottom: 1vw;
+}
+.price_list_popup_dialog h5 {
+    display: none !important;
+}
+/* .price_list_popup_dialog .enquire-form .form-row-flex {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+} */
+.price_list_popup_dialog .enquire-form input,
+.price_list_popup_dialog .enquire-form .PhoneInput {
+    font-size: 0.9vw;
+    padding: 0.6vw 1vw !important;
+}
+.price_list_popup_dialog .enquire-form .PhoneInput input {
+    padding: 0 10px !important;
+}
+.price_list_popup_dialog .enquire-form .form-section #enquiry-form {
+    gap: 0 !important;
+}
+.price_list_popup_dialog .enquire-form .form_label {
+    font-size: 1vw;
+    margin-top: 0.5rem;
+}
+.price_list_popup_dialog .price_range_group .btn {
+    font-size: 0.8vw;
+    min-width: auto;
+    padding: 0.55vw;
+}
+.price_list_popup_dialog .enquire-form .submit_btn {
+    padding: 0.6vw 1vw !important;
+    margin-top: 1rem;
+}
+.price_list_popup_dialog .enquire-form .checkbox_div,
+.price_list_popup_dialog .enquire-form .error {
+    font-size: 0.7vw;
+}
+.price_list_popup_dialog .we_get_div_grid .we_get_div_item .we_get_text {
+    font-size: 0.55vw;
+}
+.price_list_popup_dialog #enquiry-form {
+    width: 70%;
+}
+.price_list_popup_dialog .we_get_row {
+    border-right: 1px solid var(--color-yellow);
+    padding-right: 1rem !important;
+    width: 30%;
+}
+.price_list_popup_dialog .we_get_row .form_label {
+    margin-top: 0 !important;
+}
+.we_get_div_grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+    align-items: start;
+}
+.we_get_div_grid .we_get_div_item {
+    display: flex; 
+    gap: 5px;
+    align-items: start;
+}
+.we_get_div_grid .we_get_div_item .we_get_icon{
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+}
+.we_get_div_grid .we_get_div_item .we_get_text {
+    font-size: 10px;
+    font-weight: 500;
+    font-family: var(--font-medium);
+}
+.price_list_popup_dialog .form-section {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1rem;
+    width: 100%;
+}
+
+@media (max-width: 1399px) {
+    .price_list_heading {
+        font-size: 1.4vw;
+    }
+    .price_list_subtext {
+        font-size: 0.75vw;
+    }
+    .price_list_popup_dialog .enquire-form input,
+    .price_list_popup_dialog .enquire-form .PhoneInput,
+    .price_list_popup_dialog .enquire-form .submit_btn {
+        font-size: 0.9vw;
+        padding: 0.6vw 1.4vw !important;
+    }
+    .price_list_popup_dialog .enquire-form .form_label {
+        font-size: 1.1vw;
+    }
+    .price_list_popup_dialog .price_range_group .btn {
+        font-size: 0.8vw;
+        padding: 0.5vw 0.8vw;
+    }
+    .price_list_popup_dialog .enquire-form .checkbox_div,
+    .price_list_popup_dialog .enquire-form .error {
+        font-size: 0.75vw;
+    }
+    .price_list_popup_dialog .we_get_div_grid .we_get_div_item .we_get_text {
+        font-size: 0.65vw;
+    }
+    .price_list_heading_block svg {
+        font-size: 1.75vw;
+    }
+}
+@media (max-width: 1199px) {
+    .price_list_heading_block .form_logo {
+        width: 100px;
+    }
+    .price_list_popup_dialog .MuiDialog-container .MuiPaper-root {
+        max-width: 44vw;
+    }
+    .price_list_heading {
+        font-size: 1.6vw;
+    }
+    .price_list_subtext {
+        font-size: 0.9vw;
+    }
+    .price_list_popup_dialog .enquire-form input,
+    .price_list_popup_dialog .enquire-form .PhoneInput {
+        font-size: 1.1vw;
+        padding: 0.6vw 1.4vw !important;
+    }
+    .price_list_popup_dialog .enquire-form .form_label {
+        font-size: 1.4vw;
+    }
+    .price_list_popup_dialog .price_range_group .btn {
+        font-size: 0.8vw;
+        padding: 0.5vw 0.8vw;
+    }
+    .price_list_popup_dialog .enquire-form .submit_btn {
+        font-size: 1.1vw;
+        padding: 0.6vw 1.4vw !important;
+    }
+    .price_list_popup_dialog .enquire-form .checkbox_div,
+    .price_list_popup_dialog .enquire-form .error {
+        font-size: 0.8vw;
+    }
+    .price_list_popup_dialog .we_get_div_grid .we_get_div_item .we_get_text {
+        font-size: 0.7vw;
+    }
+    .price_list_heading_block svg {
+        font-size: 1.8vw;
+    }
+}
+@media (max-width: 991px) {
+    .price_list_heading_block .form_logo {
+        width: 95px;
+    }
+    .price_list_popup_dialog .MuiDialog-container .MuiPaper-root {
+        max-width: 500px;
+        margin: 92px 15px 15px;
+        padding: 20px;
+    }
+    .price_list_heading {
+        font-size: 16px;
+    }
+    .price_list_subtext {
+        font-size: 12px;
+    }
+    .price_list_popup_dialog .enquire-form input,
+    .price_list_popup_dialog .enquire-form .PhoneInput, 
+    .price_list_popup_dialog .enquire-form .submit_btn {
+        font-size: 12px;
+        padding: 6px 12px !important;
+    }
+    .price_list_popup_dialog .enquire-form .form_label {
+        font-size: 14px;
+    }
+    .price_list_popup_dialog .price_range_group .btn {
+        font-size: 9px;
+        padding: 4px 8px;
+    }
+    .price_list_popup_dialog .enquire-form .checkbox_div,
+    .price_list_popup_dialog .enquire-form .error {
+        font-size: 9px;
+    }
+    .price_list_popup_dialog .we_get_div_grid .we_get_div_item .we_get_text {
+        font-size: 8px;
+    }
+    .price_list_heading_block svg {
+        font-size: 22px;
+    }
+}
+@media (max-width: 767px) {
+    .price_list_popup_dialog .MuiDialog-container {
+        justify-content: center;
+        margin-left: 0;
+        width: 100%;
+    }
+    .price_list_popup_dialog.MuiDialog-root {
+        left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 516px) {
+    .price_list_heading_block .form_logo {
+        width: 85px;
+    }
+    .price_list_popup_dialog .form-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .price_list_popup_dialog #enquiry-form,
+    .price_list_popup_dialog .we_get_row {
+        width: 100%;
+    }
+    .price_list_popup_dialog .we_get_row {
+        border-top: 1px solid var(--color-yellow);
+        border-right: 0;
+        padding-right: 0rem !important;
+        padding-top: 8px !important;
+    }
+    .we_get_div_grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+    .price_list_subtext {
+        font-size: 10px;
+    }
+    .price_list_popup_dialog .enquire-form .form_label {
+        font-size: 12px;
+    }
+    .price_list_popup_dialog .enquire-form .submit_btn {
+        margin-top: 5px;
+    }
+    .price_list_popup_dialog .MuiDialog-container .MuiPaper-root {
+        max-width: 100%;
+        margin: 70px 12px 12px;
+        padding: 12px;
+    }
+    .price_list_heading {
+        font-size: 15px;
     }
 }

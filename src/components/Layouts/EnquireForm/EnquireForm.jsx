@@ -1,7 +1,7 @@
 import './EnquireForm.css';
 import 'react-phone-number-input/style.css';
 import PhoneInput, { isPossiblePhoneNumber, isValidPhoneNumber } from "react-phone-number-input";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
@@ -15,19 +15,19 @@ import operator from "../../../assests/images/operator.png";
 const weGetOptions = [
     {
         icon: telephone,
-        text: "Immediate Call Back from Property Expert",
+        text: "Immediate Call Back",
     },
     {
         icon: carIcon,
-        text: "Complimentary Site Visit with Pickup & Drop",
+        text: "Free Site Visit with Pickup & Drop",
+    },
+    {
+        icon: rupee,
+        text: "Direct Developer Pricing ",
     },
     {
         icon: appIcon,
         text: "Project Brochure & Floor Plans on WhatsApp",
-    },
-    {
-        icon: rupee,
-        text: "Direct Developer Pricing – Best Price Guarantee",
     },
     {
         icon: business,
@@ -35,11 +35,11 @@ const weGetOptions = [
     },
     {
         icon: operator,
-        text: "Expert Assistance with Home Loan & Documentation",
+        text: "Expert Help with Home Loans & Paperwork",
     }
 ]
 
-const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formId }) => {
+const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formId}) => {
 
     const navigate=useNavigate();
 
@@ -75,7 +75,7 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formI
         const newErrors = {};
 
         // Name required
-        if (!formData.name.trim()) newErrors.name = "Name is required";
+        if (!formData.name.trim()) newErrors.name = "Please Fill Out this Field";
 
         // Email optional but must be valid if filled
         if (formData.email && !/\S+@\S+\.\S+/.test(formData.email))
@@ -83,7 +83,7 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formI
 
         // Mobile number validation using react-phone-number-input helpers
         if (!formData.mobileNumber) {
-            newErrors.mobileNumber = "Mobile number is required";
+            newErrors.mobileNumber = "Please Fill Out this Field";
         } else if (!isPossiblePhoneNumber(formData.mobileNumber)) {
             newErrors.mobileNumber = "Phone number format looks incorrect";
         } else if (!isValidPhoneNumber(formData.mobileNumber)) {
@@ -262,8 +262,9 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formI
                         <input type="submit" value={loading ? "Processing..." : button ? button : 'Download Now'} disabled={loading} className={`submit_btn cursor-pointer`} />
                       
                     </div>
+                </div>
 
-                    {formId && formId === "download" &&
+                {formId && formId === "download" &&
                         <div className="py-2 form-row we_get_row">
                             <p className='form_label'>What You Get</p>
                             <div className='we_get_div_grid'>
@@ -276,8 +277,6 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formI
                             </div>
                         </div>
                     }
-                    
-                </div>
             </div>
         </form>
     )
