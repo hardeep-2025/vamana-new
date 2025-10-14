@@ -1,7 +1,7 @@
 import './EnquireForm.css';
 import 'react-phone-number-input/style.css';
 import PhoneInput, { isPossiblePhoneNumber, isValidPhoneNumber } from "react-phone-number-input";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
@@ -11,6 +11,7 @@ import appIcon from "../../../assests/images/app-icon.png";
 import rupee from "../../../assests/images/rupee.png";
 import business from "../../../assests/images/businessman.png";
 import operator from "../../../assests/images/operator.png";
+import { useFormContext } from '../../FormContext';
 
 const weGetOptions = [
     {
@@ -39,9 +40,11 @@ const weGetOptions = [
     }
 ]
 
-const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formId}) => {
+const EnquireForm = ({ subtitle, title, button, formId}) => {
 
     const navigate=useNavigate();
+
+    const { isRequestFormOpen, closeRequestForm, isPriceFormOpen, closePriceForm } = useFormContext();
 
     const [formData, setFormData] = useState({
         name: "",
@@ -125,12 +128,8 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formI
             
                 if (response.data.status === 0) {
                     setLoading(false);
-                    if(setOpen){
-                       setOpen(false); 
-                    }
-                    if(setshowsidePopup){
-                        setshowsidePopup(false);
-                    }
+                    if (isRequestFormOpen) closeRequestForm();
+                    if (isPriceFormOpen) closePriceForm();
                     navigate('/thankyou');
 
                 } else {
@@ -138,7 +137,6 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formI
                     setFormError("Some error occured");
                     
                     resetForm();
-                    setOpen(false);
                     setTimeout(() => {
                         setFormError('');
                     }, 10000);
@@ -166,20 +164,21 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formI
         <form className="enquire-form" onSubmit={handleSubmit}>
             <div className="form-section text-left">
                 
-
-                {/* {formSuccess && (
-                    <p className="text-green-700 py-2 text-[12px] text-center">{formSuccess}</p>
-                )} */}
                 <div id='enquiry-form'>
 
                     {formError && (
-                    <p className="text-red-400 py-2 text-[12px] text-center">{formError}</p>
-                )}
+                        <p className="py-2 form_error text-center">{formError}</p>
+                    )}
+                    
+                    {/* {formSuccess && (
+                        <p className="text-green-700 py-2 text-[12px] text-center">{formSuccess}</p>
+                    )} */}
                 
                     <h5 className="text-2xl title font-extrabold capitalize mb-2.5">
                         {subtitle && <span className='block'>{subtitle}</span>}
                         {title}
                     </h5>
+
                     <div className='form-row-flex'>
                         <div className="py-2 form-row">
                             <input
@@ -215,7 +214,7 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formI
                             onChange={handlePhoneChange}
                             className={errors.mobileNumber ? "phone-input-error" : ""}
                             country="IN"
-                           // maxlength="10"
+                            // maxlength="10"
                             defaultCountry="IN"
                             limitMaxLength={true}
                             national="true"
@@ -263,23 +262,22 @@ const EnquireForm = ({ subtitle, title, setOpen, button, setshowsidePopup, formI
 
                     <div className="text-center flex items-center gap-5 justify-end">
                         <input type="submit" value={loading ? "Processing..." : button ? button : 'Download Now'} disabled={loading} className={`submit_btn cursor-pointer`} />
-                      
                     </div>
                 </div>
 
                 {formId && formId === "download" &&
-                        <div className="py-2 form-row we_get_row">
-                            <p className='form_label'>What You Get</p>
-                            <div className='we_get_div_grid'>
-                                {weGetOptions.map((item,i) => (
-                                    <div className='we_get_div_item' key={i}>
-                                        <img src={item.icon} alt={item.text} className='we_get_icon' />
-                                        <p className='we_get_text'>{item.text}</p>
-                                    </div>
-                                ))}
-                            </div>
+                    <div className="py-2 form-row we_get_row">
+                        <p className='form_label'>What You Get</p>
+                        <div className='we_get_div_grid'>
+                            {weGetOptions.map((item,i) => (
+                                <div className='we_get_div_item' key={i}>
+                                    <img src={item.icon} alt={item.text} className='we_get_icon' />
+                                    <p className='we_get_text'>{item.text}</p>
+                                </div>
+                            ))}
                         </div>
-                    }
+                    </div>
+                }
             </div>
         </form>
     )

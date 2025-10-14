@@ -115,6 +115,8 @@ span.thanku-txt {
 .enquire-form .error {
     color: var(--color-red) !important;
     font-size: 12px;
+    font-weight: 600;
+    font-family: var(--font-semibold);
 }
 .enquire-form .form_error {
     color: var(--color-red) !important;

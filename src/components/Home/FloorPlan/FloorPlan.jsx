@@ -1,9 +1,5 @@
 import { useState } from 'react';
 import './floorplan.css';
-import { Dialog } from '@mui/material';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClose } from '@fortawesome/free-solid-svg-icons';
-import EnquireForm from '../../Layouts/EnquireForm/EnquireForm';
 import { Button, Col, Container, Nav, Row, Tab } from 'react-bootstrap';
 import floor1 from "../../../assests/images/floorplan/4+1BHK.png";
 import floor2 from "../../../assests/images/floorplan/3+1BHK.png";
@@ -11,13 +7,12 @@ import floor3 from "../../../assests/images/floorplan/3-BHK.png";
 import openIcon from "../../../assests/images/open-icon.png";
 import Lightbox from "yet-another-react-lightbox";
 import { Fullscreen, Zoom } from "yet-another-react-lightbox/plugins";
+import { useFormContext } from '../../FormContext';
 
 
 const FloorPlan = () => {
 
-    const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    const { openPriceForm } = useFormContext();
 
     const [openPlan1, setOpenPlan1] = useState(false);
     const [openPlan2, setOpenPlan2] = useState(false);
@@ -67,7 +62,7 @@ const FloorPlan = () => {
                                                 <p className="floor_text_content">Super Area - 2325 sq.ft.</p>
                                             </div>
                                             <div className="floor_plans_right">
-                                                <Button className="floor_plans_btn" onClick={() => handleOpen()}>
+                                                <Button className="floor_plans_btn" onClick={() => openPriceForm()}>
                                                     <img src={openIcon} alt="open" className="open_icon" />
                                                     Explore More
                                                 </Button>
@@ -100,7 +95,7 @@ const FloorPlan = () => {
                                                 <p className="floor_text_content">Super Area - 2690 sq.ft.</p>
                                             </div>
                                             <div className="floor_plans_right">
-                                                <Button className="floor_plans_btn" onClick={() => handleOpen()}>
+                                                <Button className="floor_plans_btn" onClick={() => openPriceForm()}>
                                                     <img src={openIcon} alt="open" className="open_icon" />
                                                     Explore More
                                                 </Button>
@@ -133,7 +128,7 @@ const FloorPlan = () => {
                                                 <p className="floor_text_content">Super Area - 2325.00 sq.ft.</p>
                                             </div>
                                             <div className="floor_plans_right">
-                                                <Button className="floor_plans_btn" onClick={() => handleOpen()}>
+                                                <Button className="floor_plans_btn" onClick={() => openPriceForm()}>
                                                     <img src={openIcon} alt="open" className="open_icon" />
                                                     Explore More
                                                 </Button>
@@ -147,33 +142,6 @@ const FloorPlan = () => {
                     </Row>
                 </Container>
             </section>
-
-            <Dialog
-                open={open}
-                onClose={handleClose}
-                className="form_popup"
-                aria-hidden="false" 
-                sx={{
-                    "& .MuiDialog-container": {
-                        "& .MuiPaper-root": {
-                            width: "100%",
-                            maxWidth: "450px",
-                            borderRadius: "8px",
-                            backgroundColor: "#fff",
-                            border: '1px solid #644630',
-                            padding: "15px",
-                        },
-                    },
-                }}
-                aria-modal="true"
-            >
-                <div className="flex flex-col popup-form">
-                    <div className="flex justify-end">
-                        <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
-                    </div>
-                    <EnquireForm title="Request For Price List" setOpen={setOpen} formId={"floor"} />
-                </div>
-            </Dialog>
         </>
     )
 }

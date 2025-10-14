@@ -5,11 +5,7 @@ import banner3 from "../../../assests/images/banner/newbanner3.png";
 import logoBlack from "../../../assests/images/logo-black.png";
 import Slider from "react-slick";
 import { Button } from "react-bootstrap";
-import { Dialog } from "@mui/material";
-import { useState } from "react";
-import EnquireForm from "../../Layouts/EnquireForm/EnquireForm";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClose } from "@fortawesome/free-solid-svg-icons";
+import { useFormContext } from "../../FormContext";
 
 const slides = [
     {
@@ -28,9 +24,7 @@ const slides = [
 
 const Banner = () => {
 
-    const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    const { openPriceForm } = useFormContext();
 
     const settings = {
         autoplay: true,
@@ -77,39 +71,12 @@ const Banner = () => {
                             <div className="banner_bottom_text">
                                 <p className="starting_price_text">Luxurious 3, 3+1 & 4+1 BHK Apartments <br/>Starting Price</p>
                                 <p className="banner_price">₹1.5 Cr* Onwards</p>
-                                <Button className="banner_enquire_btn" onClick={handleOpen}>Enquire Now</Button>
+                                <Button className="banner_enquire_btn" onClick={openPriceForm}>Enquire Now</Button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <Dialog
-                open={open}
-                onClose={handleClose}
-                className="form_popup"
-                aria-hidden="false" 
-                sx={{
-                    "& .MuiDialog-container": {
-                        "& .MuiPaper-root": {
-                            width: "100%",
-                            maxWidth: "450px",
-                            borderRadius: "8px",
-                            backgroundColor: "#fff",
-                            border: '1px solid #644630',
-                            padding: "15px",
-                        },
-                    },
-                }}
-                aria-modal="true"
-            >
-                <div className="flex flex-col popup-form">
-                    <div className="flex justify-end">
-                        <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
-                    </div>
-                    <EnquireForm title="Request For Price List" setOpen={setOpen} formId={"banner"} />
-                </div>
-            </Dialog>
         </>
     )
 

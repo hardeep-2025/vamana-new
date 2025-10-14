@@ -1,18 +1,13 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Dialog } from "@mui/material";
-import { useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import EnquireForm from "../../Layouts/EnquireForm/EnquireForm";
-import { faClose } from "@fortawesome/free-solid-svg-icons";
 import "./ClubZaira.css";
 import clubzairaBg from "../../../assests/images/clubzaira/clubziara_bg.png";
 import logoIcon from "../../../assests/images/clubzaira/logo-icon.png";
 import whiteLogo from "../../../assests/images/clubzaira/white_logo_group.png";
+import { useFormContext } from "../../FormContext";
 
 const ClubZaira = () => {
-    const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+
+    const { openPriceForm } = useFormContext();
 
     return(
         <>
@@ -46,38 +41,11 @@ const ClubZaira = () => {
                                 </div>
                             </div>
 
-                            <Button className="btn-yellow-border" onClick={handleOpen}>Enquire For free site visit</Button>
+                            <Button className="btn-yellow-border" onClick={openPriceForm}>Enquire For free site visit</Button>
                         </Col>
                     </Row>
                 </Container>
             </section>
-
-            <Dialog
-                open={open}
-                onClose={handleClose}
-                className="form_popup"
-                aria-hidden="false"
-                sx={{
-                    "& .MuiDialog-container": {
-                        "& .MuiPaper-root": {
-                            width: "100%",
-                            maxWidth: "450px",
-                            borderRadius: "8px",
-                            backgroundColor: "#fff",
-                            border: '1px solid #644630',
-                            padding: "15px",
-                        },
-                    },
-                }}
-                aria-modal="true"
-            >
-                <div className="flex flex-col popup-form">
-                    <div className="flex justify-end">
-                        <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
-                    </div>
-                    <EnquireForm title="Request for Free Site Visit" setOpen={setOpen} formId={"club"} />
-                </div>
-            </Dialog>
         </>
     )
 }

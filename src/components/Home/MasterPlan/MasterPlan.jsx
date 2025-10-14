@@ -1,19 +1,14 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Dialog } from "@mui/material";
-import { useState } from "react";
-import EnquireForm from "../../Layouts/EnquireForm/EnquireForm";
-import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import masterplan1 from "../../../assests/images/masterplan/masterplan1.png";
 import masterplan2 from "../../../assests/images/masterplan/masterplan2.png";
 import "./MasterPlan.css";
 import masterplanBg from "../../../assests/images/location_bg.jpg";
 import masterplan from "../../../assests/images/masterplan/gate-view.jpg";
+import { useFormContext } from "../../FormContext";
 
 const MasterPlan = () => {
-    const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+
+    const { openPriceForm } = useFormContext();
     
     return (
         <>
@@ -49,7 +44,7 @@ const MasterPlan = () => {
                                         <p className="paragraph">Nestled amidst 7.77 acres of lush greenery on the vibrant NH-7,  Patiala Highway, Vamana Residences offers a unique blend of modern living and natural serenity with its luxurious <b>3bhk flats in Zirakpur</b> and <b>4bhk flats in Zirakpur</b>. With 350 thoughtfully designed units, this meticulously planned community provides an idyllic escape from the city's hustle and bustle.</p>
                                         <p className="paragraph">Experience the perfect harmony of nature and luxury as you step into a world of well-defined residential clusters. Enjoy a plethora of world-class amenities, from state-of-the-art fitness centers to tranquil recreational spaces. Vamana's prime location, coupled with dedicated parking and top-tier security, ensures a convenient and secure lifestyle for its residents.</p>
                                         <p className="paragraph">Indulge in the epitome of comfortable living at <b>Vamana Residences.</b></p>
-                                        <Button className="btn-yellow-border" onClick={handleOpen}>Request For Brochure</Button>
+                                        <Button className="btn-yellow-border" onClick={openPriceForm}>Request For Brochure</Button>
                                     </div>
                                 </div>
                             </Col>
@@ -57,33 +52,6 @@ const MasterPlan = () => {
                     </Container>     
                 </div>
             </section>
-
-            <Dialog
-                open={open}
-                onClose={handleClose}
-                className="form_popup"
-                aria-hidden="false"
-                sx={{
-                    "& .MuiDialog-container": {
-                        "& .MuiPaper-root": {
-                            width: "100%",
-                            maxWidth: "450px",
-                            borderRadius: "8px",
-                            backgroundColor: "#fff",
-                            border: '1px solid #644630',
-                            padding: "15px",
-                        },
-                    },
-                }}
-                aria-modal="true"
-            >
-                <div className="flex flex-col popup-form">
-                    <div className="flex justify-end">
-                        <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
-                    </div>
-                    <EnquireForm title="Request For Price List" setOpen={setOpen} formId={"masterplan"} />
-                </div>
-            </Dialog>
         </>
     )
 }

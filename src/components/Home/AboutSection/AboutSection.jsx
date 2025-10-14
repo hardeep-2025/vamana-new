@@ -1,15 +1,11 @@
-import { Dialog } from '@mui/material';
-import EnquireForm from '../../Layouts/EnquireForm/EnquireForm';
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import "./AboutSection.css";
+import { useFormContext } from '../../FormContext';
 
 const AboutSection = () => {
-    const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+
+    const { openPriceForm } = useFormContext();
+
     return (
         <>
             <section className="home-about-section padding-top padding-bottom" id="flats">
@@ -26,39 +22,11 @@ const AboutSection = () => {
                             management team, you can relax knowing that you're living in a safe and well-maintained environment.</p>
                             <p className="paragraph">Embrace a lifestyle where luxury meets tranquility. Discover your dream <b>luxury flat in Zirakpur</b> in one of the best and most remarkable <b>new residential projects in Zirakpur</b> today, and take the first step towards a life of comfort, convenience, and serenity.</p>
                             <h3 className="paragraph"> Your sanctuary awaits at Vamana Arvindam Zirakpur!</h3>
-                            <Button tabIndex='-1' className="btn-yellow-border" onClick={handleOpen}>Request For Brochure</Button>
+                            <Button tabIndex='-1' className="btn-yellow-border" onClick={openPriceForm}>Request For Brochure</Button>
                         </Col>
                     </Row>
                 </Container>
             </section>
-
-            {/* Popup */}
-            <Dialog
-                open={open}
-                onClose={handleClose}
-                className="form_popup"
-                aria-hidden="false"
-                sx={{
-                    "& .MuiDialog-container": {
-                        "& .MuiPaper-root": {
-                            width: "100%",
-                            maxWidth: "450px",
-                            borderRadius: "8px",
-                            backgroundColor: "#fff",
-                            border: '1px solid #644630',
-                            padding: "15px",
-                        },
-                    },
-                }}
-                aria-modal="true"
-            >
-                <div className="flex flex-col popup-form">
-                    <div className="flex justify-end">
-                        <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={handleClose} />
-                    </div>
-                    <EnquireForm title="Request For Brochure" setOpen={setOpen} formId={"about"} />
-                </div>
-            </Dialog>
         </>
     )
 }
