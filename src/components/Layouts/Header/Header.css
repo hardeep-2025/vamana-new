@@ -705,7 +705,7 @@
 } */
 /* Header fixed btns */
 .fixed_btns_header {
-    right: 5%;
+    right: 67px;
     left: auto;
     position: fixed;
     bottom: 5%;
@@ -717,6 +717,11 @@
     height: 50px;
     object-fit: contain;
     cursor: pointer;
+}
+@media (max-width: 1350px) {
+    .fixed_btns_header {
+        right: 30px;
+    }
 }
 @media (max-width: 991px) {
     .fixed_btns_header .header_btns_float {
@@ -744,11 +749,15 @@
 
 
 /* popup */
+.MuiBackdrop-root.MuiModal-backdrop {
+    background-color: rgba(0, 0, 0, 0.65);
+}
 .price_list_popup_dialog.MuiDialog-root {
     width: 100%;
 }
 .price_list_popup_dialog .MuiDialog-container {
     width: 100%;
+    justify-content: end;
 }
 .form_popup .MuiDialog-container .MuiPaper-root {
     margin: 92px 30px 30px;
@@ -756,7 +765,7 @@
 }
 .price_list_popup_dialog .MuiDialog-container .MuiPaper-root {
     max-width: 42vw;
-    margin: 92px 30px 30px;
+    margin: 92px 67px 30px 30px;
     max-height: calc(100% - 100px);
     padding: 1.5vw;
 }
@@ -830,7 +839,7 @@
 .we_get_div_grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
+    gap: 1.5rem;
     margin-top: 10px;
     align-items: start;
 }
@@ -887,6 +896,11 @@
         font-size: 1.75vw;
     }
 }
+@media (max-width: 1350px) {
+    .price_list_popup_dialog .MuiDialog-container .MuiPaper-root {
+        margin: 92px 30px 30px 30px;
+    }
+}
 @media (max-width: 1199px) {
     .price_list_heading_block .form_logo {
         width: 100px;
@@ -925,6 +939,9 @@
     }
     .price_list_heading_block svg {
         font-size: 1.8vw;
+    }
+    .we_get_div_grid {
+        gap: 1rem;
     }
 }
 @media (max-width: 991px) {
