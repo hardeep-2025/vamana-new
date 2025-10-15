@@ -66,14 +66,42 @@ const Header = () => {
     },
   ];
 
-  const { openPriceForm } = useFormContext();
+  const {
+    openPriceForm,
+    isPriceFormOpen,
+    priceFormOpenedManually,
+    priceFormAutoOpened,
+  } = useFormContext();
 
   useEffect(() => {
-    setTimeout(() => {
-      openPriceForm();
-    }, 5000);
-    // eslint-disable-next-line
-  }, []);
+    const checkAndAutoOpen = () => {
+      if (
+        window.innerWidth < 992 &&
+        !isPriceFormOpen &&
+        !priceFormOpenedManually &&
+        !priceFormAutoOpened
+      ) {
+        openPriceForm(
+          "Vamana Residence Exclusive Price List!",
+          "Explore Comprehensive and Updated Price Information for Vamana Residences",
+          "Download Price List",
+          "fixed",
+          true // fromAuto
+        );
+      }
+    };
+
+    // Auto open after 5 seconds
+    const timer = setTimeout(checkAndAutoOpen, 5000);
+
+    // Auto open on resize below 992px
+    window.addEventListener("resize", checkAndAutoOpen);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", checkAndAutoOpen);
+    };
+  }, [isPriceFormOpen, priceFormOpenedManually, priceFormAutoOpened, openPriceForm]);
 
   // handle menu click
   const handleMenuClick = (e) => {
@@ -190,7 +218,7 @@ const Header = () => {
                     <img src={phoneIcon} alt="Phone" className="phone_icon" />
                     +91 9736338888
                   </Link>
-                  <Button className="header_request_btn" onClick={openPriceForm}>Request Details</Button>
+                  <Button className="header_request_btn" onClick={() => openPriceForm("Request More Details About Vamana Residences", "Share your information, and our team will provide all the details you need to make an informed decision.", "Enquire Now", "request")}>Request Details</Button>
                 </div>
                 <p className="header_rera_number">PBRERA-SAS79-PR1018</p>
               </div>

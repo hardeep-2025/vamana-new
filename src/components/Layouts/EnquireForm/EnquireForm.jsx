@@ -40,7 +40,7 @@ const weGetOptions = [
     }
 ]
 
-const EnquireForm = ({ subtitle, title, button, formId}) => {
+const EnquireForm = ({ subtitle, title, showSide, button, formId}) => {
 
     const navigate=useNavigate();
 
@@ -130,7 +130,27 @@ const EnquireForm = ({ subtitle, title, button, formId}) => {
                     setLoading(false);
                     if (isRequestFormOpen) closeRequestForm();
                     if (isPriceFormOpen) closePriceForm();
-                    navigate('/thankyou');
+
+                    if(formId === "fixed") {
+                        navigate('/thankyou', {
+                            state: { message: "Your request to download the Vamana Residences price list has been received. Our team will get in touch shortly to share the details and assist you with any questions." },
+                        });
+                    } else if(formId === "schedule") {
+                        navigate('/thankyou', {
+                            state: { message: "Your request for a free site visit at Vamana Residences has been received. Our team will contact you shortly to confirm your visit." },
+                        });
+                    } else if(formId === "request") {
+                        navigate('/thankyou', {
+                            state: { message: "Your request has been received successfully. Our team will contact you shortly with the details and assist you with any questions about Vamana Residences." },
+                        });
+                    } else if(formId === "brochure") {
+                        navigate('/thankyou', {
+                            state: { message: "Your brochure has been sent to your email. Our team will connect with you shortly to assist further." },
+                        });
+                    } else {
+                        navigate('/thankyou');
+                    }
+                    
 
                 } else {
                     setLoading(false);
@@ -189,7 +209,7 @@ const EnquireForm = ({ subtitle, title, button, formId}) => {
                                 onChange={handleChange}
                                 className={errors.name ? "invalid" : ""}
                             />
-                            {errors.name && <p className="text-red-400 error text-sm">{errors.name}</p>}
+                            <p className={`text-red-400 error text-sm ${errors.name && "visible"}`}>{errors.name ? errors.name : "Please Fill Out this Field"}</p>
                         </div>
                         <div className="py-2 form-row">
                             <input
@@ -201,7 +221,7 @@ const EnquireForm = ({ subtitle, title, button, formId}) => {
                                 onChange={handleChange}
                                 className={errors.email ? "invalid" : ""}
                             />
-                            {errors.email && <p className="text-red-400 error text-sm">{errors.email}</p>}
+                            <p className={`text-red-400 error text-sm ${errors.email && "visible"}`}>{errors.email ? errors.email : "Please Fill Out this Field"}</p>
                         </div>
                     </div>
                     <div className="py-2 form-row">
@@ -220,9 +240,7 @@ const EnquireForm = ({ subtitle, title, button, formId}) => {
                             national="true"
                             international={false}
                         />
-                        {errors.mobileNumber && (
-                            <p className="text-red-400 error text-sm">{errors.mobileNumber}</p>
-                        )}
+                        <p className={`text-red-400 error text-sm ${errors.mobileNumber && "visible"}`}>{errors.mobileNumber ? errors.mobileNumber : "Please Fill Out this Field"}</p>
                     </div>
 
                     <div className="py-2 form-row">
@@ -251,21 +269,19 @@ const EnquireForm = ({ subtitle, title, button, formId}) => {
                                 onChange={handleChange}
                                 className={errors.terms ? "checkbox-error checkbox" : "checkbox"} 
                             /> 
-                            <span className="checkmark"></span>
+                            <span className={errors.terms ? "checkbox-error checkmark" : "checkmark"}></span>
                         </label>
                         <span>I agree to be contacted by 'Vamana Residences' and its agents via WhatsApp, SMS, phone, email etc.</span>
                     </p>
 
-                    {errors.terms && (
-                        <p className="text-red-700 error text-sm">{errors.terms}</p>
-                    )}
+                    <p className={`text-red-400 error text-sm ${errors.terms && "visible"}`}>{errors.terms ? errors.terms : "You must accept the terms"}</p>
 
                     <div className="text-center flex items-center gap-5 justify-end">
                         <input type="submit" value={loading ? "Processing..." : button ? button : 'Download Now'} disabled={loading} className={`submit_btn cursor-pointer`} />
                     </div>
                 </div>
 
-                {formId && formId === "download" &&
+                {showSide && showSide === true &&
                     <div className="py-2 form-row we_get_row">
                         <p className='form_label'>What You Get</p>
                         <div className='we_get_div_grid'>

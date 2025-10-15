@@ -72,6 +72,9 @@ span.thanku-txt {
     background-image: none !important;
     border-color: var(--color-red) !important;
 }
+.custom-checkbox .checkmark.checkbox-error {
+    border-color: var(--color-red) !important;
+}
 .enquire-form .PhoneInput {
     border: 1px solid #A3A1A1 !important;
     border-radius: 8px;
@@ -85,7 +88,7 @@ span.thanku-txt {
     background-color: var(--color-transparent) !important;
 }
 .enquire-form .checkbox_div {
-    margin-top: 0.5rem !important;
+    margin-top: 1rem !important;
     font-size: 12px;
     color: #484747;
     align-items: start;
@@ -113,10 +116,14 @@ span.thanku-txt {
     color: var(--color-yellow) !important;
 }
 .enquire-form .error {
-    color: var(--color-red) !important;
-    font-size: 12px;
+    color: #ff3838 !important;
     font-weight: 600;
     font-family: var(--font-semibold);
+    font-size: 10px;
+    visibility: hidden;
+}
+.enquire-form .error.visible {
+    visibility: visible;
 }
 .enquire-form .form_error {
     color: var(--color-red) !important;
@@ -126,7 +133,7 @@ span.thanku-txt {
     margin-bottom: 10px;
 }
 .enquire-form .form-row {
-    padding: 5px 0 !important;
+    padding: 0 !important;
 }
 .popup-form svg {
     color: var(--color-yellow);
@@ -159,7 +166,7 @@ span.thanku-txt {
     font-weight: 600;
     font-family: var(--font-semibold);
     color: var(--color-yellow);
-    margin: 8px 0 5px;
+    margin: 0px 0 5px;
 }
 .price_range_group {
     flex-wrap: unset;

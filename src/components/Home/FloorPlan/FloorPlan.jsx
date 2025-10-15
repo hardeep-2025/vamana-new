@@ -62,7 +62,7 @@ const FloorPlan = () => {
                                                 <p className="floor_text_content">Super Area - 2325 sq.ft.</p>
                                             </div>
                                             <div className="floor_plans_right">
-                                                <Button className="floor_plans_btn" onClick={() => openPriceForm()}>
+                                                <Button className="floor_plans_btn" onClick={() => openPriceForm("Request More Details About Vamana Residences", "Share your information, and our team will provide all the details you need to make an informed decision.", "Enquire Now", "request")}>
                                                     <img src={openIcon} alt="open" className="open_icon" />
                                                     Explore More
                                                 </Button>
@@ -95,7 +95,7 @@ const FloorPlan = () => {
                                                 <p className="floor_text_content">Super Area - 2690 sq.ft.</p>
                                             </div>
                                             <div className="floor_plans_right">
-                                                <Button className="floor_plans_btn" onClick={() => openPriceForm()}>
+                                                <Button className="floor_plans_btn" onClick={() => openPriceForm("Request More Details About Vamana Residences", "Share your information, and our team will provide all the details you need to make an informed decision.", "Enquire Now", "request")}>
                                                     <img src={openIcon} alt="open" className="open_icon" />
                                                     Explore More
                                                 </Button>
@@ -128,7 +128,7 @@ const FloorPlan = () => {
                                                 <p className="floor_text_content">Super Area - 2325.00 sq.ft.</p>
                                             </div>
                                             <div className="floor_plans_right">
-                                                <Button className="floor_plans_btn" onClick={() => openPriceForm()}>
+                                                <Button className="floor_plans_btn" onClick={() => openPriceForm("Request More Details About Vamana Residences", "Share your information, and our team will provide all the details you need to make an informed decision.", "Enquire Now", "request")}>
                                                     <img src={openIcon} alt="open" className="open_icon" />
                                                     Explore More
                                                 </Button>

@@ -22,7 +22,7 @@ const AboutSection = () => {
                             management team, you can relax knowing that you're living in a safe and well-maintained environment.</p>
                             <p className="paragraph">Embrace a lifestyle where luxury meets tranquility. Discover your dream <b>luxury flat in Zirakpur</b> in one of the best and most remarkable <b>new residential projects in Zirakpur</b> today, and take the first step towards a life of comfort, convenience, and serenity.</p>
                             <h3 className="paragraph"> Your sanctuary awaits at Vamana Arvindam Zirakpur!</h3>
-                            <Button tabIndex='-1' className="btn-yellow-border" onClick={openPriceForm}>Request For Brochure</Button>
+                            <Button tabIndex='-1' className="btn-yellow-border" onClick={() => openPriceForm("Get the Complete Vamana Residences Brochure", "Unlock all details about our 3, 3+1 & 4+1 BHK luxury residences.", "Get Brochure", "brochure")}>Request For Brochure</Button>
                         </Col>
                     </Row>
                 </Container>

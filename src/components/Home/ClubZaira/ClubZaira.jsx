@@ -41,7 +41,7 @@ const ClubZaira = () => {
                                 </div>
                             </div>
 
-                            <Button className="btn-yellow-border" onClick={openPriceForm}>Enquire For free site visit</Button>
+                            <Button className="btn-yellow-border" onClick={() => openPriceForm("Schedule Your Free Site Visit at Vamana Residences", "Experience luxury living firsthand and get personalized guidance from our expert team.", "Schedule Visit", "schedule")}>Enquire For free site visit</Button>
                         </Col>
                     </Row>
                 </Container>

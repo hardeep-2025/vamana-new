@@ -9,7 +9,7 @@ const PriceList = () => {
                 <Row>
                     <Col>
                         <div className="price_list_contact_block">
-                            <EnquireForm title="Vamana Flats – Latest Rates & Pricing" formId={"pricelist"} />
+                            <EnquireForm title="Vamana Flats – Latest Rates & Pricing" button={"Submit Enquiry"} formId={"pricelist"} />
                         </div>
                     </Col>
                 </Row>

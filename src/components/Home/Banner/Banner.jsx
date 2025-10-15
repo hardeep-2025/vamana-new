@@ -6,6 +6,41 @@ import logoBlack from "../../../assests/images/logo-black.png";
 import Slider from "react-slick";
 import { Button } from "react-bootstrap";
 import { useFormContext } from "../../FormContext";
+import EnquireForm from "../../Layouts/EnquireForm/EnquireForm";
+
+import telephone from "../../../assests/images/telephone.png";
+import appIcon from "../../../assests/images/app-icon.png";
+import rupee from "../../../assests/images/rupee.png";
+import business from "../../../assests/images/businessman.png";
+import operator from "../../../assests/images/operator.png";
+import carIcon from "../../../assests/images/car-icon.png";
+
+const weGetOptions = [
+    {
+        icon: telephone,
+        text: "Immediate Call Back from Property Expert",
+    },
+    {
+        icon: carIcon,
+        text: "Free Site Visit with Pickup & Drop Service",
+    },
+    {
+        icon: appIcon,
+        text: "Project Brochure & Floor Plans on WhatsApp",
+    },
+    {
+        icon: rupee,
+        text: "Direct Developer Pricing – Best Price Guarantee",
+    },
+    {
+        icon: business,
+        text: "Dedicated Relationship Manager",
+    },
+    {
+        icon: operator,
+        text: "Expert Assistance with Home Loan & Documentation",
+    }
+]
 
 const slides = [
     {
@@ -70,8 +105,27 @@ const Banner = () => {
                             </div>
                             <div className="banner_bottom_text">
                                 <p className="starting_price_text">Luxurious 3, 3+1 & 4+1 BHK Apartments <br/>Starting Price</p>
-                                <p className="banner_price">₹1.5 Cr* Onwards</p>
-                                <Button className="banner_enquire_btn" onClick={openPriceForm}>Enquire Now</Button>
+                                <p className="banner_price">₹ 1.5 Cr* Onwards</p>
+                                <Button className="banner_enquire_btn" onClick={() => openPriceForm("Schedule Your Free Site Visit at Vamana Residences", "Experience luxury living firsthand and get personalized guidance from our expert team.", "Schedule Visit", "schedule")}>Schedule a Free Site Visit</Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="right_fixed_sidebar">
+                    <div className="bottom_fixed_sidebar">
+                        <p className="price_list_heading">Vamana Residence Exclusive Price List!</p>
+                        <p className="price_list_subtext">Explore Comprehensive and Updated Price Information for Vamana Residences</p>
+                        <EnquireForm formId={"fixed"} title="Ultra-Luxurious 3, 3+1, and 4+1 BHK Flats & Penthouses/Duplexes | Starting at ₹1.5 Cr*" button="Download Price List" />
+                        <div className="py-2 form-row we_get_row">
+                            <p className='form_label'>What You Get</p>
+                            <div className='we_get_div_grid'>
+                                {weGetOptions.map((item,i) => (
+                                    <div className='we_get_div_item' key={i}>
+                                        <img src={item.icon} alt={item.text} className='we_get_icon' />
+                                        <p className='we_get_text'>{item.text}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

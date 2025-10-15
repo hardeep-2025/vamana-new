@@ -6,7 +6,7 @@ import logo from '../../../assests/images/logo.png';
 import { useFormContext } from "../../FormContext";
 
 const PriceDetailsForm = () => {
-  const { isPriceFormOpen, closePriceForm } = useFormContext();
+  const { isPriceFormOpen, closePriceForm, subTitle, formTitle, buttonText, formId } = useFormContext();
 
   return (
 
@@ -38,10 +38,10 @@ const PriceDetailsForm = () => {
         <FontAwesomeIcon icon={faClose} className="text-2xl cursor-pointer" onClick={closePriceForm} />
       </div>
       <div className="price_list_form_flex">
-        <p className="price_list_heading">Vamana Residence Exclusive Price List!</p>
-        <p className="price_list_subtext">Explore Comprehensive and Updated Price Information for Vamana Residences</p>
+        <p className="price_list_heading">{formTitle ? formTitle : "Vamana Residence Exclusive Price List!"}</p>
+        <p className="price_list_subtext">{subTitle ? subTitle : "Explore Comprehensive and Updated Price Information for Vamana Residences"}</p>
         <div className="price_list_form_col">
-          <EnquireForm  formId={"download"} title="Download Price List" button="Download Price List" />
+          <EnquireForm showSide={true} formId={formId ? formId : "download"} title="Download Price List" button={buttonText ? buttonText : "Download Price List"} />
         </div>
       </div>
     </Dialog>
