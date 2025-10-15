@@ -188,9 +188,10 @@
     .banner_slider_text_inner {
         max-width: 100%;
     }
-    .banner_slider_text {
+    .banner_slider, .banner_slider_text {
         height: auto;
         min-height: auto;
+        width: 100%;
     }
     .bannner_slider_white_box {
         gap: 1rem;
