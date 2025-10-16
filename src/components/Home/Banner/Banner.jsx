@@ -114,7 +114,7 @@ const Banner = () => {
 
                 <div className="right_fixed_sidebar">
                     <div className="bottom_fixed_sidebar">
-                        <p className="price_list_heading">Vamana Residence Exclusive Price List!</p>
+                        <p className="price_list_heading">Vamana Residences Exclusive Price List!</p>
                         <p className="price_list_subtext">Explore Comprehensive and Updated Price Information for Vamana Residences</p>
                         <EnquireForm formId={"fixed"} title="Ultra-Luxurious 3, 3+1, and 4+1 BHK Flats & Penthouses/Duplexes | Starting at ₹1.5 Cr*" button="Download Price List" />
                         <div className="py-2 form-row we_get_row">

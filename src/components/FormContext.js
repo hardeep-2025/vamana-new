@@ -5,7 +5,7 @@ const FormContext = createContext();
 export const FormProvider = ({ children }) => {
   const [isRequestFormOpen, setIsRequestFormOpen] = useState(false);
   const [isPriceFormOpen, setIsPriceFormOpen] = useState(false);
-  const [formTitle, setFormTitle] = useState("Vamana Residence Exclusive Price List!");
+  const [formTitle, setFormTitle] = useState("Vamana Residences Exclusive Price List!");
   const [subTitle, setSubTitle] = useState("Explore Comprehensive and Updated Price Information for Vamana Residences");
   const [buttonText, setButtonText] = useState("Download Price List");
   const [formId, setFormId] = useState("fixed");
@@ -19,7 +19,7 @@ export const FormProvider = ({ children }) => {
 
   const closeRequestForm = () => setIsRequestFormOpen(false);
 
-  const openPriceForm = (title = "Vamana Residence Exclusive Price List!", subTitle= "Explore Comprehensive and Updated Price Information for Vamana Residences", buttonText= "Download Price List", formId = "fixed", fromAuto = false) => {
+  const openPriceForm = (title = "Vamana Residences Exclusive Price List!", subTitle= "Explore Comprehensive and Updated Price Information for Vamana Residences", buttonText= "Download Price List", formId = "fixed", fromAuto = false) => {
     setFormTitle(title);
     setSubTitle(subTitle);
     setButtonText(buttonText);

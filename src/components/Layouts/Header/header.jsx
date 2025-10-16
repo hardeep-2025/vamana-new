@@ -82,7 +82,7 @@ const Header = () => {
         !priceFormAutoOpened
       ) {
         openPriceForm(
-          "Vamana Residence Exclusive Price List!",
+          "Vamana Residences Exclusive Price List!",
           "Explore Comprehensive and Updated Price Information for Vamana Residences",
           "Download Price List",
           "fixed",
