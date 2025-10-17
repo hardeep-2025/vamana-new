@@ -214,7 +214,7 @@ const Header = () => {
 
               <div className="header_right">
                 <div className="header_right_top">
-                  <Link to={"tel:+919736338888"} className="header_call">
+                  <Link to={"tel:+919736338888"} className="header_call blink">
                     <img src={phoneIcon} alt="Phone" className="phone_icon" />
                     +91 9736338888
                   </Link>

@@ -99,9 +99,15 @@ const Banner = () => {
                                 <p className="points_block_text">10 Ft Wide Sun Deck</p>
                             </div>
                             <div className="banner_gradient_block">
-                                <p className="banner_gradient_text">Limited Time Period Offer</p>
-                                <p className="banner_gradient_text">Beautiful Floor Lobbies</p>
-                                <p className="banner_gradient_text">High Speed Elevators</p>
+                                <p className="banner_gradient_text">
+                                    <span>Limited Time Period Offer</span>
+                                </p>
+                                <p className="banner_gradient_text">
+                                    <span>Beautiful Floor Lobbies</span>
+                                </p>
+                                <p className="banner_gradient_text">
+                                    <span>High Speed Elevators</span>
+                                </p>
                             </div>
                             <div className="banner_bottom_text">
                                 <p className="starting_price_text">Luxurious 3, 3+1 & 4+1 BHK Apartments <br/>Starting Price</p>

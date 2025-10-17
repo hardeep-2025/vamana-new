@@ -83,6 +83,19 @@
     font-family: var(--font-semibold);
     color: var(--color-white);
     padding: 6px 20px;
+    overflow: hidden;
+}
+.banner_gradient_block .banner_gradient_text span {
+    display: inline-block;
+    animation: zoomInOut 1s ease-in-out infinite;
+}
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); 
+  }
 }
 .banner_bottom_text {
     display: flex;
@@ -296,8 +309,8 @@
 .right_fixed_sidebar .we_get_row .form_label {
     color: var(--color-yellow);
     border-top: 1px solid var(--color-yellow);
-    margin-top: 0.5rem;
-    padding-top: 0.5rem;
+    margin-top: 0.6rem;
+    padding-top: 1rem;
 }
 .right_fixed_sidebar .we_get_div_grid {
     gap: 6px;
@@ -310,7 +323,8 @@
     padding-bottom: 0.5rem;
 }
 .right_fixed_sidebar .price_list_subtext {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    margin-top: 0.5rem;
     font-size: 0.85vw;
     line-height: 1.3;
 }
