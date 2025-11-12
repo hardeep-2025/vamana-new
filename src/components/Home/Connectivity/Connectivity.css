@@ -53,8 +53,6 @@
 }
 .connectivity_text_block .connectivity_text {
     font-size: 18px;
-    font-weight: 600;
-    font-family: var(--font-semibold);
 }
 @media (max-width: 991px) {
     .connectivity_text_block .connectivity_text {

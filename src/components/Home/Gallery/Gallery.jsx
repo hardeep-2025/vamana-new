@@ -8,6 +8,8 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { Col, Container, Row, Tab, Tabs } from 'react-bootstrap';
+import galleryBG from "../../../assests/images/new-gallery/gallery_bg.jpg";
+import arvindamLogo from "../../../assests/images/new-gallery/arvindam_logo.png";
 
 import exterior1 from "../../../assests/images/new-gallery/exterior1.png";
 import exterior2 from "../../../assests/images/new-gallery/exterior2.png";
@@ -35,38 +37,44 @@ const Gallery = () => {
         {
             src: exterior1,
             title: "Vamana Arvindam Zirakpur exterior view showcasing modern architecture, premium design, and luxurious residential living",
-            rows: 1,
-            cols: 1,
+            rows: 2,
+            cols: 3,
         },
         {
-            src: exterior2,
-            title: "People walk in garden area of new residential projects in Zirakpur at Vamana Arvindam featuring lush greenery and modern living",
-            rows: 1,
+            src: exterior4,
+            title: "Luxury flats in Zirakpur at Vamana Arvindam featuring green garden, basketball ground, and swimming pool for premium lifestyle",
+            rows: 2,
             cols: 2,
         },
         {
             src: exterior3,
             title: "Night view of 3BHK and 4BHK luxury apartments in Zirakpur at Vamana Arvindam featuring elegant lighting and modern architecture",
-            rows: 2,
-            cols: 1,
+            rows: 4,
+            cols: 3,
+            logo: arvindamLogo,
         },
         {
-            src: exterior4,
-            title: "Luxury flats in Zirakpur at Vamana Arvindam featuring green garden, basketball ground, and swimming pool for premium lifestyle",
+            src: exterior2,
+            title: "People walk in garden area of new residential projects in Zirakpur at Vamana Arvindam featuring lush greenery and modern living",
+            rows: 1,
+            cols: 3,
         },
         {
             src: exterior5,
             title: "3 BHK luxury flats in Zirakpur at Vamana Arvindam featuring modern architecture, spacious interiors, and premium lifestyle amenities",
-        },
-        {
-            src: exterior6,
-            title: "Top view of Zirakpur flats 3BHK at Vamana Arvindam showing building exterior, landscaped grounds, and green plants",
+            cols: 2,
         },
         {
             src: exterior7,
             title: "Exterior view of Vamana Arvindam Zirakpur showcasing modern architecture, landscaped surroundings, and premium residential design",
-            cols: 4,
+            cols: 5,
+            rows: 3,
+        },
+        {
+            src: exterior6,
+            title: "Top view of Zirakpur flats 3BHK at Vamana Arvindam showing building exterior, landscaped grounds, and green plants",
             rows: 2,
+            cols: 3,
         }
     ]
 
@@ -75,41 +83,47 @@ const Gallery = () => {
 
     const interiorImages = [
         {
-            src: interior7,
-            title: "Interior view of 3 BHK luxury flats in Zirakpur at Vamana Arvindam featuring modern furnishings, spacious layout, and premium design",
-            rows: 1,
-            cols: 1,
+            src: interior1,
+            title: "Luxury flats in Zirakpur living room with elegant sofa set, wall painting, and stunning mountain view from balcony",
+            rows: 2,
+            cols: 3,
         },
         {
             src: interior2,
             title: "Modern interior view of luxury flats for sale in Zirakpur featuring stylish living space and contemporary design",
-            rows: 1,
+            rows: 2,
             cols: 2,
         },
         {
             src: interior3,
             title: "Modern bedroom with elegant bed design in Zirakpur flats 3BHK at Vamana Arvindam offering luxury and comfort",
-            rows: 2,
-            cols: 1,
+            rows: 4,
+            cols: 3,
+            logo: arvindamLogo,
         },
         {
             src: interior4,
             title: "Interior view of new residential projects in Zirakpur at Vamana Arvindam featuring modern design and premium furnishings",
+            rows: 1,
+            cols: 3,
         },
         {
             src: interior5,
             title: "Balcony view from Vamana Arvindam Group Zirakpur apartments showcasing scenic surroundings and modern lifestyle",
+            cols: 2,
+        },
+        {
+            src: interior7,
+            title: "Interior view of 3 BHK luxury flats in Zirakpur at Vamana Arvindam featuring modern furnishings, spacious layout, and premium design",
+            cols: 5,
+            rows: 3,
         },
         {
             src: interior6,
             title: "People enjoying by the swimming pool at flats for sale in Zirakpur, Vamana Arvindam featuring leisure and luxury amenities",
-        },
-        {
-            src: interior1,
-            title: "Luxury flats in Zirakpur living room with elegant sofa set, wall painting, and stunning mountain view from balcony",
             rows: 2,
-            cols: 4,
-        }
+            cols: 3,
+        },
     ]
 
     function srcset(image, size, rows = 1, cols = 1) {
@@ -123,6 +137,7 @@ const Gallery = () => {
 
     return(
         <section className="gallery_section padding-top padding-bottom" id="gallery">
+            <img src={galleryBG} alt='Gallery' className='gallery_bg_image' />
             <Container>
                 <Row>
                     <Col>
@@ -138,9 +153,9 @@ const Gallery = () => {
                             <Tab eventKey="exterior" title="Exterior">
                                 <ImageList
                                     variant="quilted"
-                                    cols={4}
-                                    gap={8}
-                                    rowHeight={250}
+                                    cols={8}
+                                    gap={10}
+                                    rowHeight={200}
                                     className='gallery-images-list'
                                 >
                                     {exteriorImages.map((item,i) => (
@@ -151,6 +166,7 @@ const Gallery = () => {
                                                 onClick={() => setExterior(i)}
                                                 className={`object-cover cursor-pointer`}
                                             />
+                                            {item.logo && <img src={item.logo} alt='Logo' className='gallery_logo_img' />}
                                         </ImageListItem>
                                     ))}
                                 
@@ -171,9 +187,9 @@ const Gallery = () => {
                             <Tab eventKey="interior" title="Interior">
                                 <ImageList
                                     variant="quilted"
-                                    cols={4}
-                                    gap={8}
-                                    rowHeight={250}
+                                    cols={8}
+                                    gap={10}
+                                    rowHeight={200}
                                     className='gallery-images-list'
                                 >
                                     {interiorImages.map((item,i) => (
@@ -184,6 +200,7 @@ const Gallery = () => {
                                                 onClick={() => setInteriorIndex(i)}
                                                 className={`object-cover cursor-pointer`}
                                             />
+                                            {item.logo && <img src={item.logo} alt='Logo' className='gallery_logo_img' />}
                                         </ImageListItem>
                                     ))}
                                 

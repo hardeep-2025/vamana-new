@@ -4,7 +4,7 @@ import EnquireForm from "../../Layouts/EnquireForm/EnquireForm"
 
 const PriceList = () => {
     return(
-        <section className="home-pricelist-section padding-bottom" id="pricelist">
+        <section className="home-pricelist-section padding-top padding-bottom" id="pricelist">
             <Container>
                 <Row>
                     <Col>
