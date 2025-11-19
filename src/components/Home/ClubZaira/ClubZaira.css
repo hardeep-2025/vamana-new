@@ -158,3 +158,9 @@
         max-width: 100%;
     }
 }
+@media (max-width: 480px) {
+    .clubzaira_content_div .includge_text {
+        font-size: 30px;
+        line-height: 24px;
+    }
+}

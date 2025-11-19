@@ -13,6 +13,8 @@ import LocationPage from './components/LocationPage/LocationPage';
 import PriceListPage from './components/PriceListPage/PriceListPage';
 import GalleryPage from './components/GalleryPage/GalleryPage';
 import AmenitiesPage from './components/AmenitiesPage/AmenitiesPage';
+import BlogPage from './components/BlogPage/BlogPage';
+import BlogDetail from './components/BlogPage/BlogDetail';
 
 function App() {
   return (
@@ -58,6 +60,10 @@ function App() {
             <Route path='/price-list' element={<PriceListPage />} />
             <Route path='/galleries' element={<GalleryPage />} />
             <Route path='/amenitie' element={<AmenitiesPage />} />
+
+            {/* Blogs */}
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:url" element={<BlogDetail />} />
           </Route>
           
         </Routes>

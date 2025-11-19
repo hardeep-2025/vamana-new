@@ -212,6 +212,9 @@
         width: 100%;
         margin: auto;
     }
+    .banner_bottom_text .banner_enquire_btn {
+        font-size: 16px;
+    }
 }
 
 /* New CSS */

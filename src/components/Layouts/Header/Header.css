@@ -1,13 +1,11 @@
 .container {
-  max-width: 1280px;
-  padding-left: 20px;
-  padding-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-@media (max-width: 575px) {
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1280px;
+    }
 }
 .main_header {
     position: sticky;

@@ -1,7 +1,7 @@
 import './Gallery.css';
 import Lightbox from "yet-another-react-lightbox";
 import { Counter, Fullscreen, Zoom } from "yet-another-react-lightbox/plugins";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
@@ -135,6 +135,14 @@ const Gallery = () => {
         };
     }
 
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 992);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 992);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return(
         <section className="gallery_section padding-top padding-bottom" id="gallery">
             <img src={galleryBG} alt='Gallery' className='gallery_bg_image' />
@@ -155,7 +163,7 @@ const Gallery = () => {
                                     variant="quilted"
                                     cols={8}
                                     gap={10}
-                                    rowHeight={200}
+                                    rowHeight={isMobile ? 100 : 180}
                                     className='gallery-images-list'
                                 >
                                     {exteriorImages.map((item,i) => (

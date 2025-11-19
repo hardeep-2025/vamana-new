@@ -14,7 +14,6 @@
 }
 .home-amenities-section .container {
     position: relative;
-    max-width: 1040px;
 }
 .home-amenities-section .main_heading {
     color: var(--color-white);
@@ -22,8 +21,9 @@
 .amenities_grid {
     display: grid;
     gap: 1rem;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 235px);
     padding-bottom: 2rem;
+    justify-content: center;
 }
 .amenities_grid_item {
     border: 1px solid #FFFFFF7A;
@@ -53,6 +53,11 @@
     font-weight: 600;
     font-family: var(--font-semibold);
 }
+@media (max-width: 1199px) {
+    .amenities_grid {
+        grid-template-columns: repeat(3, 235px);
+    }
+}
 @media (max-width: 991px) {
     .amenities_grid_item .amenities_icon {
         width: 48px;
@@ -61,19 +66,26 @@
     .amenities_grid_item {
         min-height: 180px;
     }
+    .amenities_grid {
+        grid-template-columns: repeat(3, 180px);
+    }
 }
 @media (max-width: 767px) {
-    .amenities_grid {
-        grid-template-columns: repeat(3, 1fr);
+    .amenities_grid_item {
+        min-height: 150px;
+        padding: 20px 10px;
     }
     .amenities_grid_item .amenities_text {
         font-size: 14px;
+    }
+    .amenities_grid {
+        grid-template-columns: repeat(3, 150px);
     }
 }
 @media (max-width: 575px) {
     
     .amenities_grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 150px);
     }
 }
 @media (max-width: 480px) {
@@ -82,6 +94,13 @@
         height: 30px;
     }
     .amenities_grid_item {
-        min-height: 150px;
+        min-height: 130px;
+    }
+    .amenities_grid {
+        grid-template-columns: repeat(2, 130px);
+        gap: 10px;
+    }
+    .amenities_grid_item .amenities_text {
+        font-size: 12px;
     }
 }

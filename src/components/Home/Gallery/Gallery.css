@@ -85,6 +85,9 @@
         max-width: 150px !important;
         max-height: 150px !important;
     }
+    /* .gallery-images-list .gallery-image {
+		height: 280px !important;
+	} */
 }
 @media (max-width: 767px){
 	.gallery-images-list{

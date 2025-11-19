@@ -102,14 +102,23 @@
     .master_plan_texts_col .paragraph {
         font-size: 16px;
     }
-    .master_plan_texts_flex {
-        gap: 1rem;
-    }
     .master_plan_images_flex {
         margin-bottom: -450px;
     }
     .masterplan_bottom_block {
         padding-top: 520px;
+    }
+     .master_plan_texts_flex {
+        flex-direction: column-reverse;
+        gap: 4rem;
+    }
+    .masterplan_left_img .masterplan_left {
+        min-height: auto;
+    }
+    .masterplan_left_img {
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 @media (max-width: 767px) {

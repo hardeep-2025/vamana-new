@@ -46,7 +46,11 @@ const Footer = () => {
           redirect: "/price-list",
           id: "price-list",
         },
-
+        {
+          name: "Blogs",
+          redirect: "/blog",
+          id: "blog",
+        },
     ];
 
     const social = [
