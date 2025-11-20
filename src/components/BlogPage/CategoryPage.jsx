@@ -1,7 +1,7 @@
 import { Card, Col, Container, Row, Spinner } from "react-bootstrap";
 import MetaData from "../Layouts/MetaData";
 import "./BlogPage.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import defaultImage from "../../assests/images/placeholder-image.webp";
 import ReactPaginate from "react-paginate";
@@ -10,11 +10,13 @@ import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons
 import axios from "axios";
 import BlogSidebar from "./BlogSidebar";
 
-const BlogPage = () => {
+const CategoryPage = () => {
 
+    const url = useParams().url;
     const location = useLocation();
     const blogRef = useRef();
 
+    const [category, setCategory] = useState("");
     const [data, setData] = useState([])
     const [page, setPage] = useState(0);
     const [filterData, setFilterData] = useState();
@@ -28,11 +30,19 @@ const BlogPage = () => {
 
     useEffect(() => {
 
-        axios.get(`${process.env.REACT_APP_API_URL}/api/blog-list.php`)
+        axios({
+            method: "post",
+            url: `${process.env.REACT_APP_API_URL}/api/calegory-filter.php`,
+            data: JSON.stringify({
+                cat_url: url
+            }),
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        })
         .then(res => {
-            setData(res.data);
+            setCategory(res.data.category);
+            setData(res.data.lists);
             setFilterData(
-                res.data.filter((item, index) => {
+                res.data.lists.filter((item, index) => {
                   return (index >= page * n) & (index < (page + 1) * n);
                 })
             );
@@ -43,13 +53,13 @@ const BlogPage = () => {
         .finally(() => {
             setLoading(false);
         })
-    }, [page]);
+    }, [url, page]);
 
     return(
         <>
 
             <MetaData 
-                title={"Blogs - Vamana Arvindam"}
+                title={`${category && "Category: "+category} - Vamana Arvindam`}
                 description={"Experience unmatched luxury and convenience with the premium blogs at Vamana Group."}
                 canonicalUrl={`${process.env.REACT_APP_API_URL}${location.pathname}`}
             />
@@ -58,7 +68,7 @@ const BlogPage = () => {
                 <Container>
                     <Row>
                         <Col lg={8}>
-                            <h2 className='main_heading'>Blogs</h2>
+                            <h2 className='main_heading'>{category && "Category: "+category}</h2>
                             
                             {
                                 loading ?
@@ -114,7 +124,7 @@ const BlogPage = () => {
                                         }
                                     </>
                                 : 
-                                    <p className="paragraph text-center">No Blog Found.</p>
+                                    <p className="paragraph text-left">No Blog Found.</p>
                             }
                             
                         </Col>
@@ -129,4 +139,4 @@ const BlogPage = () => {
     )
 }
 
-export default BlogPage
+export default CategoryPage

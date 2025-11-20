@@ -15,6 +15,8 @@ import GalleryPage from './components/GalleryPage/GalleryPage';
 import AmenitiesPage from './components/AmenitiesPage/AmenitiesPage';
 import BlogPage from './components/BlogPage/BlogPage';
 import BlogDetail from './components/BlogPage/BlogDetail';
+import CategoryPage from './components/BlogPage/CategoryPage';
+import TagPage from './components/BlogPage/TagPage';
 
 function App() {
   return (
@@ -64,6 +66,8 @@ function App() {
             {/* Blogs */}
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:url" element={<BlogDetail />} />
+            <Route path="/category/:url" element={<CategoryPage />} />
+            <Route path="/tag/:url" element={<TagPage />} />
           </Route>
           
         </Routes>

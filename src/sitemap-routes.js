@@ -12,5 +12,7 @@ export default (
         <Route path='/price-list' />
         <Route path='/galleries'  />
         <Route path='/amenitie'  />
+        <Route path='/blog' />
+        <Route path="/blog/:url"/>
     </Route>
 )

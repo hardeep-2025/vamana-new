@@ -1,5 +1,4 @@
 import { useLocation } from "react-router-dom";
-import Location from "../Home/Location/Location"
 import MetaData from "../Layouts/MetaData"
 import Connectivity from "../Home/Connectivity/Connectivity";
 
