@@ -245,6 +245,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    text-transform: capitalize;
 }
 .categories_lists_item .categories_lists_title:hover {
     color: var(--color-yellow);
