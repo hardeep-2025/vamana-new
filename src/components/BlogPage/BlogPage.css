@@ -134,6 +134,10 @@
     color: var(--color-yellow) !important;
     font-weight: 600;
 }
+.blog-details-content-div ul, 
+.blog-details-content-div ol {
+    list-style: inside;
+}
 .blog-category-block {
     border-top: 1px solid var(--color-border);
     padding-top: 2rem;

@@ -68,7 +68,7 @@ const CategoryPage = () => {
                 <Container>
                     <Row>
                         <Col lg={8}>
-                            <h2 className='main_heading'>{category && "Category: "+category}</h2>
+                            {category &&<h2 className='main_heading'>Category: {category}</h2>}
                             
                             {
                                 loading ?

@@ -68,7 +68,7 @@ const TagPage = () => {
                 <Container>
                     <Row>
                         <Col lg={8}>
-                            <h2 className='main_heading'>{tag && "Tag: "+tag}</h2>
+                            {tag &&<h2 className='main_heading'>Tag: {tag}</h2>}
                             
                             {
                                 loading ?
