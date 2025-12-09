@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import './floorplan.css';
 import { Button, Col, Container, Nav, Row, Tab } from 'react-bootstrap';
-import floor1 from "../../../assests/images/floorplan/4+1BHK.png";
-import floor2 from "../../../assests/images/floorplan/3+1BHK.png";
-import floor3 from "../../../assests/images/floorplan/3-BHK.png";
-import penthouse from "../../../assests/images/floorplan/penthouse.png";
-import openIcon from "../../../assests/images/open-icon.png";
 import Lightbox from "yet-another-react-lightbox";
 import { Fullscreen, Zoom } from "yet-another-react-lightbox/plugins";
 import { useFormContext } from '../../FormContext';
 
+const floor1 = `${process.env.REACT_APP_API_URL}/assests/images/floorplan/4+1BHK.webp`;
+const floor2 = `${process.env.REACT_APP_API_URL}/assests/images/floorplan/3+1BHK.webp`;
+const floor3 = `${process.env.REACT_APP_API_URL}/assests/images/floorplan/3-BHK.webp`;
+const penthouse = `${process.env.REACT_APP_API_URL}/assests/images/floorplan/penthouse.webp`;
+const openIcon = `${process.env.REACT_APP_API_URL}/assests/images/open-icon.png`;
 
 const FloorPlan = () => {
 

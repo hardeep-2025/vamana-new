@@ -1,12 +1,13 @@
 
 import "./Footer.css";
 import { NavLink } from "react-router-dom";
-import logo from '../../../assests/images/logo.png';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { faFacebookF, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { Col, Container, Row } from "react-bootstrap";
+
+const logo = `${process.env.REACT_APP_API_URL}/assests/images/logo.png`;
 
 const Footer = () => {
 

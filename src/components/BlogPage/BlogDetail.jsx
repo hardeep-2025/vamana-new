@@ -4,10 +4,11 @@ import { useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import { Col, Container, Row, Spinner } from "react-bootstrap";
 import MetaData from "../Layouts/MetaData";
-import defaultImage from "../../assests/images/placeholder-image.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderOpen, faHashtag } from "@fortawesome/free-solid-svg-icons";
 import BlogSidebar from "./BlogSidebar";
+
+const defaultImage = `${process.env.REACT_APP_API_URL}/assests/images/placeholder-image.webp`;
 
 const BlogDetail = () => {
     const url = useParams().url;

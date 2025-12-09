@@ -1,9 +1,10 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./ClubZaira.css";
-import clubzairaBg from "../../../assests/images/clubzaira/clubziara_bg.png";
-import logoIcon from "../../../assests/images/clubzaira/logo-icon.png";
-import whiteLogo from "../../../assests/images/clubzaira/white_logo_group.png";
 import { useFormContext } from "../../FormContext";
+
+const clubzairaBg = `${process.env.REACT_APP_API_URL}/assests/images/clubzaira/clubziara_bg.webp`;
+const logoIcon = `${process.env.REACT_APP_API_URL}/assests/images/clubzaira/logo-icon.webp`;
+const whiteLogo = `${process.env.REACT_APP_API_URL}/assests/images/clubzaira/white_logo_group.webp`;
 
 const ClubZaira = () => {
 

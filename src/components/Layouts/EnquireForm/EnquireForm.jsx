@@ -5,13 +5,14 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
-import telephone from "../../../assests/images/telephone.png";
-import carIcon from "../../../assests/images/car-icon.png";
-import appIcon from "../../../assests/images/app-icon.png";
-import rupee from "../../../assests/images/rupee.png";
-import business from "../../../assests/images/businessman.png";
-import operator from "../../../assests/images/operator.png";
 import { useFormContext } from '../../FormContext';
+
+const telephone = `${process.env.REACT_APP_API_URL}/assests/images/telephone.webp`;
+const appIcon = `${process.env.REACT_APP_API_URL}/assests/images/app-icon.webp`;
+const rupee = `${process.env.REACT_APP_API_URL}/assests/images/rupee.webp`;
+const business = `${process.env.REACT_APP_API_URL}/assests/images/businessman.webp`;
+const operator = `${process.env.REACT_APP_API_URL}/assests/images/operator.webp`;
+const carIcon = `${process.env.REACT_APP_API_URL}/assests/images/car-icon.webp`;
 
 const weGetOptions = [
     {

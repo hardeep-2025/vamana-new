@@ -1,7 +1,6 @@
 import MetaData from "../Layouts/MetaData"
 import AboutSection from "./AboutSection/AboutSection"
 import Amenities from "./Amenities/Amenities"
-// import BannerSlider from "./BannerSlider/BannerSlider"
 import FloorPlan from "./FloorPlan/FloorPlan"
 import Gallery from "./Gallery/Gallery"
 import MasterPlan from "./MasterPlan/MasterPlan"
@@ -22,7 +21,6 @@ const Home = () => {
             />
 
             <Banner />
-            {/* <BannerSlider /> */}
             <AboutSection />
             <Amenities />
             <FloorPlan />
@@ -30,7 +28,6 @@ const Home = () => {
             <DigitalTour />
             <ClubZaira/>
             <Connectivity />
-            {/* <Clubhouse /> */}
             <Gallery />
             <PriceList />
         </>

@@ -1,9 +1,10 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import locationimg from '../../../assests/images/location-img.webp';
-import locationOverlay from '../../../assests/images/location-overlay.png';
 import Lightbox from 'yet-another-react-lightbox';
 import { Fullscreen, Zoom } from 'yet-another-react-lightbox/plugins';
 import { useState } from 'react';
+
+const locationimg = `${process.env.REACT_APP_API_URL}/assests/images/location-img.webp`;
+const locationOverlay = `${process.env.REACT_APP_API_URL}/assests/images/location-overlay.webp`;
 
 const Location = () => {
 

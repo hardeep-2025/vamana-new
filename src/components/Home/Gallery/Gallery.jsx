@@ -8,24 +8,25 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { Col, Container, Row, Tab, Tabs } from 'react-bootstrap';
-import galleryBG from "../../../assests/images/new-gallery/gallery_bg.jpg";
-import arvindamLogo from "../../../assests/images/new-gallery/arvindam_logo.png";
 
-import exterior1 from "../../../assests/images/new-gallery/exterior1.png";
-import exterior2 from "../../../assests/images/new-gallery/exterior2.png";
-import exterior3 from "../../../assests/images/new-gallery/exterior3.png";
-import exterior4 from "../../../assests/images/new-gallery/exterior4.png";
-import exterior5 from "../../../assests/images/new-gallery/exterior5.png";
-import exterior6 from "../../../assests/images/new-gallery/exterior6.png";
-import exterior7 from "../../../assests/images/new-gallery/exterior7.png";
+const galleryBG = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/gallery_bg.webp`;
+const arvindamLogo = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/arvindam_logo.webp`;
 
-import interior1 from "../../../assests/images/new-gallery/interior1.jpg";
-import interior2 from "../../../assests/images/new-gallery/interior2.png";
-import interior3 from "../../../assests/images/new-gallery/interior3.jpg";
-import interior4 from "../../../assests/images/new-gallery/interior4.png";
-import interior5 from "../../../assests/images/new-gallery/interior5.png";
-import interior6 from "../../../assests/images/new-gallery/interior6.png";
-import interior7 from "../../../assests/images/new-gallery/interior7.jpg";
+const exterior1 = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/exterior1.webp`;
+const exterior2 = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/exterior2.webp`;
+const exterior3 = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/exterior3.webp`;
+const exterior4 = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/exterior4.webp`;
+const exterior5 = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/exterior5.webp`;
+const exterior6 = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/exterior6.webp`;
+const exterior7 = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/exterior7.webp`;
+
+const interior1 = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/interior1.webp`;
+const interior2 = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/interior2.webp`;
+const interior3 = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/interior3.webp`;
+const interior4 = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/interior4.webp`;
+const interior5 = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/interior5.webp`;
+const interior6 = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/interior6.webp`;
+const interior7 = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/interior7.webp`;
 
 const Gallery = () => {
 

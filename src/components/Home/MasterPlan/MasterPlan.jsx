@@ -1,10 +1,11 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
-import masterplan1 from "../../../assests/images/masterplan/masterplan1.png";
-import masterplan2 from "../../../assests/images/masterplan/masterplan2.png";
 import "./MasterPlan.css";
-import masterplanBg from "../../../assests/images/location_bg.jpg";
-import masterplan from "../../../assests/images/masterplan/gate-view.jpg";
 import { useFormContext } from "../../FormContext";
+
+const masterplanBg = `${process.env.REACT_APP_API_URL}/assests/images/location_bg.webp`;
+const masterplan = `${process.env.REACT_APP_API_URL}/assests/images/masterplan/gate-view.webp`;
+const masterplan1 = `${process.env.REACT_APP_API_URL}/assests/images/masterplan/masterplan1.webp`;
+const masterplan2 = `${process.env.REACT_APP_API_URL}/assests/images/masterplan/masterplan2.webp`;
 
 const MasterPlan = () => {
 

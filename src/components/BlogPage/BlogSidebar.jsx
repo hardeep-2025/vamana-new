@@ -1,9 +1,10 @@
 import axios from "axios";
 import "./BlogPage.css";
-import defaultImage from "../../assests/images/placeholder-image.webp";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleDot } from "@fortawesome/free-solid-svg-icons";
+
+const defaultImage = `${process.env.REACT_APP_API_URL}/assests/images/placeholder-image.webp`;
 
 const BlogSidebar = () => {
 

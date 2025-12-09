@@ -2,8 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import EnquireForm from "../EnquireForm/EnquireForm";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 import { Dialog } from "@mui/material";
-import logo from '../../../assests/images/logo.png';
 import { useFormContext } from "../../FormContext";
+
+const logo = `${process.env.REACT_APP_API_URL}/assests/images/logo.png`;
 
 const PriceDetailsForm = () => {
   const { isPriceFormOpen, closePriceForm, subTitle, formTitle, buttonText, formId } = useFormContext();

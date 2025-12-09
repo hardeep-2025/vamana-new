@@ -1,12 +1,13 @@
 import { Col, Container, Row } from "react-bootstrap";
 import "./Connectivity.css";
-import connectivityBg from "../../../assests/images/location_bg.jpg";
-import transport from "../../../assests/images/connectivity/public-transport.png";
-import malls from "../../../assests/images/connectivity/malls.png";
-import golf from "../../../assests/images/connectivity/golf.png";
-import itService from "../../../assests/images/connectivity/it-service.png";
-import hospitals from "../../../assests/images/connectivity/hospital.png";
-import weekend from "../../../assests/images/connectivity/map.png";
+
+const connectivityBg = `${process.env.REACT_APP_API_URL}/assests/images/location_bg.webp`;
+const transport = `${process.env.REACT_APP_API_URL}/assests/images/connectivity/public-transport.webp`;
+const malls = `${process.env.REACT_APP_API_URL}/assests/images/connectivity/malls.webp`;
+const golf = `${process.env.REACT_APP_API_URL}/assests/images/connectivity/golf.webp`;
+const itService = `${process.env.REACT_APP_API_URL}/assests/images/connectivity/it-service.webp`;
+const hospitals = `${process.env.REACT_APP_API_URL}/assests/images/connectivity/hospital.webp`;
+const weekend = `${process.env.REACT_APP_API_URL}/assests/images/connectivity/map.webp`;
 
 const Connectivity = () => {
 
