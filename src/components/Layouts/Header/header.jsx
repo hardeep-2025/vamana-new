@@ -215,9 +215,9 @@ const Header = () => {
 
               <div className="header_right">
                 <div className="header_right_top">
-                  <Link to={"tel:+919736338888"} className="header_call blink">
+                  <Link to={"tel:+919915841204"} className="header_call blink">
                     <img src={phoneIcon} alt="Phone" className="phone_icon" />
-                    +91 9736338888
+                    +91 9915841204
                   </Link>
                   <Button className="header_request_btn" onClick={() => openPriceForm("Request More Details About Vamana Residences", "Share your information, and our team will provide all the details you need to make an informed decision.", "Enquire Now", "request")}>Request Details</Button>
                 </div>

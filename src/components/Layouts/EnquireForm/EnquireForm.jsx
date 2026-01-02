@@ -278,7 +278,11 @@ const EnquireForm = ({ subtitle, title, showSide, button, formId}) => {
                     <p className={`text-red-400 error text-sm ${errors.terms && "visible"}`}>{errors.terms ? errors.terms : "You must accept the terms"}</p>
 
                     <div className="text-center flex items-center gap-5 justify-end">
-                        <input type="submit" value={loading ? "Processing..." : button ? button : 'Download Now'} disabled={loading} className={`submit_btn cursor-pointer`} />
+                        <input type="submit" 
+                        value={loading ? "Processing..." : button ? button : 'Download Now'} 
+                        disabled={loading} 
+                        className={`submit_btn cursor-pointer ${(!formData.terms || loading) ? 'disabled' : ''}`}
+                        />
                     </div>
                 </div>
 

@@ -112,7 +112,7 @@ const Banner = () => {
                             </div>
                             <div className="banner_bottom_text">
                                 <p className="starting_price_text">Luxurious 3, 3+1 & 4+1 BHK Apartments <br/>Starting Price</p>
-                                <p className="banner_price">₹ 1.8 Cr* Onwards</p>
+                                <p className="banner_price">₹ 1.7 Cr* Onwards</p>
                                 <Button className="banner_enquire_btn" onClick={() => openPriceForm("Schedule Your Free Site Visit at Vamana Residences", "Experience luxury living firsthand and get personalized guidance from our expert team.", "Schedule Visit", "schedule")}>Schedule a Free Site Visit</Button>
                             </div>
                         </div>
