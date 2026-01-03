@@ -32,7 +32,7 @@ const ClubZaira = () => {
                                             <p className="includge_text white">INDULGENCE</p>
                                         </div>
                                         <p className="biggest_text paragraph">The Biggest Clubhouse in the Vicinity </p>
-                                        <p className="paragraph">SPPER OVER 30,000 SQ FT</p>
+                                        <p className="paragraph">SPREAD OVER 30,000 SQ FT</p>
                                         <img src={logoIcon} alt="Logo" className="logo_icon" />
                                         <p className="sensation_text club_text">CLUB ZAIRA</p>
                                         <p className="sensation_text">LIVE THE MOMENT</p>
