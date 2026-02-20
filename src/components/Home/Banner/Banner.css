@@ -88,6 +88,10 @@
 .banner_gradient_block .banner_gradient_text span {
     display: inline-block;
     animation: zoomInOut 1s ease-in-out infinite;
+}   
+.banner_bottom_text .banner_enquire_btn{
+    display: inline-block;
+    animation: zoomInOut 1s ease-in-out infinite;
 }
 @keyframes zoomInOut {
   0%, 100% {
