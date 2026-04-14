@@ -12,6 +12,32 @@ import BlogSidebar from "./BlogSidebar";
 const defaultImage = `${process.env.REACT_APP_API_URL}/assests/images/placeholder-image.webp`;
 
 const BlogPage = () => {
+    const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://vamanaresidences.com/blog"
+  },
+  "headline": "Blogs - Vamana Arvindam",
+  "description": "Experience unmatched luxury and convenience with the premium blogs at Vamana Group.",
+  "image": "https://media.istockphoto.com/id/1049277550/photo/retro-blog-bulb-sign-with-leather-armchair.jpg?s=612x612&w=0&k=20&c=EzRprmTVPOk5bONifiiBrq1S6j7VgqWY1sc8tKVbm4A=",  
+  "author": {
+    "@type": "Organization",
+    "name": "vamanaresidences",
+    "url": "https://vamanaresidences.com/"
+  },  
+  "publisher": {
+    "@type": "Organization",
+    "name": "",
+    "logo": {
+      "@type": "ImageObject",
+      "url": ""
+    }
+  },
+  "datePublished": "2025-11-19",
+  "dateModified": "2026-04-14"
+}
 
     const location = useLocation();
     const blogRef = useRef();
@@ -53,6 +79,7 @@ const BlogPage = () => {
                 title={"Blogs - Vamana Arvindam"}
                 description={"Experience unmatched luxury and convenience with the premium blogs at Vamana Group."}
                 canonicalUrl={`${process.env.REACT_APP_API_URL}${location.pathname}`}
+                blogSchema={blogSchema}
             />
 
             <div className="blog_page_section sidebar_layout padding-top padding-bottom"  ref={blogRef}>

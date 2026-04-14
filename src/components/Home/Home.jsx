@@ -11,6 +11,38 @@ import Connectivity from "./Connectivity/Connectivity"
 import DigitalTour from "./DigitalTour/DigitalTour"
 
 const Home = () => {
+    const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "vamanaresidences",
+  "image": "https://vamanaresidences.com/assests/images/logo.png",
+  "@id": "https://vamanaresidences.com/#realestateagent",
+  "url": "https://vamanaresidences.com/",
+  "telephone": "+91-9915841204",
+  "priceRange": "Rs1.5Cr - Rs2Cr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "High Ground Lights, Patiala Rd",
+    "addressLocality": "Zirakpur, Punjab",
+    "postalCode": "140603",
+    "addressCountry": "IN"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  } 
+}
+
+
     return (
         <>
             <MetaData 
@@ -18,6 +50,7 @@ const Home = () => {
                 description={"Vamana Arvindam Group Zirakpur offers 3BHK & 4BHK luxury flats with modern amenities and prime connectivity. Discover premium residential flats for sale in the heart of Zirakpur."} 
                 keywords={"Vamana Group, Vamana Arvindam, 3 BHK flats Zirakpur, 3+1 BHK flats Zirakpur, 4+1 BHK flats Zirakpur, Flats near Patiala Road Zirakpur, Luxury apartments Zirakpur, Luxury Flats in Zirakpur, Premium Property in Zirakpur, New Residential Project in Zirakpur"}
                 canonicalUrl={process.env.REACT_APP_API_URL}
+                            localSchema={localSchema}
             />
 
             <Banner />
