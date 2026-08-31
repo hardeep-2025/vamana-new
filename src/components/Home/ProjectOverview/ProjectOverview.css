@@ -1,0 +1,128 @@
+
+.projectOverview {
+   
+    background:#110D07;
+    position: relative;
+   
+}
+.bgimage{
+ background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.NumberSectionOverView{
+     padding-top: 136px ;
+     padding-bottom: 64px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width:767px) {
+
+    .NumberSectionOverView{
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+}
+.listNumberSpan{
+    display: flex;
+    flex-direction: column;
+}
+.listNoYelllow{
+    font-size: 35px;
+    font-weight: 700 !important;
+    line-height: 40px;
+    color: #C27C00;
+}
+.listpara{
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 300;
+    color: white;
+}
+
+ 
+/* Project Overview Section */
+.ProjectOverviewSection {
+    padding-top: 60px ;
+    padding-bottom: 136px;
+}
+ 
+.overviewImageWrap {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+}
+ 
+.overviewImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+    padding-right: 7%;
+}
+ 
+.overviewHeading {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 27px;
+    margin-bottom: 32px;
+}
+ 
+.overviewList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+ 
+.overviewListItem {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 14px;
+}
+.overviewTickIcon img {
+    width: 20px !important;
+    min-width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+ 
+.overviewListText {
+    color: #FFFFFF;
+    font-size: 18px;
+}
+ 
+@media (max-width: 991px) {
+    .overviewHeading {
+        font-size: 26px;
+    }
+    .NumberSectionOverView{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+    }
+}
+ 
+@media (max-width: 767px) {
+
+    .NumberSectionOverView{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+    }
+    .projectOverview{
+        top: -7px;
+    }
+
+}

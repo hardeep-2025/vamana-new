@@ -215,10 +215,18 @@ const Header = () => {
 
               <div className="header_right">
                 <div className="header_right_top">
-                  <Link to={"tel:+919915841204"} className="header_call blink">
+                  {/* <Link to={"tel:+917339903423"} className="header_call blink">
                     <img src={phoneIcon} alt="Phone" className="phone_icon" />
-                    +91 9915841204
+                    +91 7339903423
+                  </Link> */}
+
+
+<Link to={"tel:+917717689799"} className="header_call blink">
+                    <img src={phoneIcon} alt="Phone" className="phone_icon" />
+                    +91 7717689799
                   </Link>
+
+
                   <Button className="header_request_btn" onClick={() => openPriceForm("Request More Details About Vamana Residences", "Share your information, and our team will provide all the details you need to make an informed decision.", "Enquire Now", "request")}>Request Details</Button>
                 </div>
                 <p className="header_rera_number">PBRERA-SAS79-PR1018</p>
@@ -230,9 +238,16 @@ const Header = () => {
 
       {/* Whatsapp Icon */}
       <div className="fixed_btns_header z-20">
-        <a href="https://wa.me/+919736338888" rel="noreferrer" target="_blank">
+        {/* <a href="https://wa.me/+917339903423" rel="noreferrer" target="_blank">
+          <img src={whatsappIcon} alt="Whatsapp" className="header_btns_float whatsapp" />
+        </a> */}
+
+
+
+         <a href="https://wa.me/+917717689799" rel="noreferrer" target="_blank">
           <img src={whatsappIcon} alt="Whatsapp" className="header_btns_float whatsapp" />
         </a>
+
       </div>
 
       {/* Popup */}

@@ -1,5 +1,17 @@
 import "./Amenities.css";
 import { Col, Container, Row } from "react-bootstrap";
+import img3 from "./building2.png"
+import img1 from "./measurement.png"
+import img2 from "./verified.png"
+import img4 from "./building.png"
+import img5 from "./golf-club.png"
+import img6 from "./parking.png"
+import img7 from "./highway.png"
+import img8 from "./home.png"
+import check from "./check.png"
+
+
+
 
 const amenitiesBg = `${process.env.REACT_APP_API_URL}/assests/images/amnities/amnities-bg.webp`;
 const gate = `${process.env.REACT_APP_API_URL}/assests/images/amnities/gate.webp`;
@@ -147,6 +159,49 @@ const Amenities = () => {
             icon: carParking,
         },
     ]
+    const specs = [
+  {
+    icon: img1,
+    label: "Project Size",
+    value: "7.7 Acres",
+  },
+  {
+    icon: img2,
+    label: "Clubhouse",
+    value: "30,000 sq.ft. Club Zaira",
+  },
+  {
+    icon: img3,
+    label: "Security",
+    value: "4 Tire Security System",
+  },
+  {
+    icon: img4,
+    label: "Parking",
+    value: "Basement + Stilt Parking",
+  },
+  {
+    icon: img5,
+    label: "Structure",
+    value: "Stilt + 14/15 Floors",
+  },
+  {
+    icon: img6,
+    label: "Highway Access",
+    value: "Direct NH-7 / Patiala Hiway Approch",
+  },
+  {
+    icon: img7,
+    label: "Total Units",
+    value: "330 Luxury Apartments",
+  },
+  {
+    icon: img8,
+    label: "Configuration",
+    value: "3 BHK, 3+1 BHK, 4+1 BHK",
+  },
+];
+
 
     return (
         <section className="home-amenities-section padding-top padding-bottom" id="amenities">
@@ -160,9 +215,42 @@ const Amenities = () => {
                                 <div className="amenities_grid_item aminities-group" key={i}>
                                     <img src={item.icon} alt={item.title} className="amenities_icon animate-wobble" />
                                     <p className="amenities_text">{item.title}</p>
+                                    
                                 </div>
                             ))}
+                          <div className="specifications_full">
+                               
+                            <div className="mx-auto bg-white rounded-3xl shadow-xl p-[43px] max-[767px]:px-[20px]">
+                            {/* Header */}
+                            <div className="flex items-center !gap-3 mb-8">
+                                <img src={check} alt=""/>
+                                <h2 className="!text-[30px]  font-semibold text-gray-900">
+                                Specifications
+                                </h2>
+                            </div>
+                        
+                            {/* Grid */}
+                            <div className="grid grid-cols-2 max-[767px]:grid-cols-1 gap-x-10 gap-y-7 px-3">
+                                {specs.map((spec, i) => (
+                                <div key={i} className="flex items-start gap-3">
+                                    <img
+                                    src={spec.icon}
+                                    alt={spec.label}
+                                    className="w-6 h-6 mt-0.5 shrink-0 object-contain"
+                                    />
+                                    <div>
+                                    <p className="text-[16px] text-[#686868] font-light mb-1">
+                                        {spec.label}
+                                    </p>
+                                    <p className="text-[16px] font-bold text-[#000000]">{spec.value}</p>
+                                    </div>
+                                </div>
+                                ))}
+                            </div>
+                            </div>
+                            </div>
                         </div>
+                        
                     </Col>
                 </Row>
             </Container>

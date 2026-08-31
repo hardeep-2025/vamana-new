@@ -3,9 +3,7 @@
     z-index: 99999999;
 }
 .gallery_section {
-    background-color: var(--color-black);
     position: relative;
-    padding: 6rem 0;
 }
 .gallery_section .gallery_bg_image {
     opacity: 16%;
@@ -28,7 +26,7 @@
 .gallery_tabs {
     padding: 0rem 0 4rem;
     gap: 10px;
-	justify-content: center;
+	justify-content: start;
 }
 .gallery_tabs .nav-link {
     background-color: var(--color-btn-bg);

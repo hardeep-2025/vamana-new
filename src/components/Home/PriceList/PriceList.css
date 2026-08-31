@@ -1,16 +1,45 @@
 .price_list_contact_block {
-    background-color: #fff;
-    border: 1px solid #C0C0C0;
+    background-color: transparent;
     border-radius: 8px;
-    padding: 2rem 3rem;
+    padding: 0rem 0rem;
     max-width: 860px;
+    color: white !important;
     margin: auto;
+    position: relative;
+}
+
+.backgorndImg{
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    top: 0;
+    height: 100%;
+}
+.home-pricelist-section {
+    position: relative;
+    background: url("./vamana-hero.png") center/cover no-repeat;
+    z-index: 1;
+}
+
+.home-pricelist-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* Adjust opacity */
+    z-index: -1;
+}
+#pricelist {
+    background: #222222;
+}
+#pricelist .price_list_contact_block.enquire-form h5{
+color: white;
+margin-bottom: 40px;
 }
 .price_list_contact_block .enquire-form h5 {
-    text-align: center;
-    font-size: 35px;
-    color: var(--color-black);
-    margin-bottom: 20px;
+    text-align: left;
+    font-size: 30px;
+    color: white;
+    margin-bottom: 60px;
 }
 .price_list_contact_block .enquire-form input,
 .price_list_contact_block .enquire-form .PhoneInput {
@@ -18,6 +47,17 @@
     border-color: var(--color-border) !important;
     font-size: 16px;
     padding: 12px 25px !important;
+    color: white;
+}
+.price_list_contact_block .enquire-form input::placeholder {
+    color: #fff !important;
+    opacity: 1; /* Ensures full visibility in some browsers */
+}
+
+/* react-phone-number-input placeholder */
+.price_list_contact_block .enquire-form .PhoneInput input::placeholder {
+    color: #fff !important;
+    opacity: 1;
 }
 .price_list_contact_block .enquire-form .PhoneInput input {
     padding: 0 5px !important;
@@ -48,7 +88,7 @@
     color: var(--color-white);
 }
 .price_list_contact_block .enquire-form .checkbox_div {
-    color: #555050;
+    color:white;
     font-size: 14px;
     margin-top: 2rem !important;
 }
@@ -72,12 +112,15 @@
     color: var(--color-white) !important;
 }
 .price_list_contact_block .enquire-form .form-row-flex {
-    flex-direction: row;
-    gap: 10px;
+    flex-direction: column;
+    /* gap: 10px; */
 }
 @media (max-width: 767px) {
     .price_list_contact_block {
         padding: 2rem;
+    }
+    #pricelist .col{
+       width: 100%; 
     }
     .price_list_contact_block .enquire-form h5 {
         font-size: 25px;

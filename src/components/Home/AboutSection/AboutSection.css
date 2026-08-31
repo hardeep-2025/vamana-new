@@ -4,6 +4,7 @@
     font-family: var(--font-semibold);
     margin-bottom: 2rem;
     text-align: center;
+    text-align: left;
 }
 .paragraph {
     font-size: 18px;

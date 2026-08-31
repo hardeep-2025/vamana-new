@@ -1,5 +1,5 @@
 .home-amenities-section {
-    background-color: #372401;
+    background-color: #110D07;
     position: relative;
 }
 .home-amenities-section .amenities_section_bg {
@@ -17,6 +17,7 @@
 }
 .home-amenities-section .main_heading {
     color: var(--color-white);
+    padding-bottom: 50px;
 }
 .amenities_grid {
     display: grid;
@@ -24,6 +25,11 @@
     grid-template-columns: repeat(4, 235px);
     padding-bottom: 2rem;
     justify-content: center;
+}
+.specifications_full {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 150px;
 }
 .amenities_grid_item {
     border: 1px solid #FFFFFF7A;
@@ -75,6 +81,11 @@
         min-height: 150px;
         padding: 20px 10px;
     }
+    .specifications_full {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 70px;
+}
     .amenities_grid_item .amenities_text {
         font-size: 14px;
     }
@@ -87,6 +98,9 @@
     .amenities_grid {
         grid-template-columns: repeat(2, 150px);
     }
+        .home-amenities-section .main_heading {
+        padding-bottom:10px ;
+    }
 }
 @media (max-width: 480px) {
     .amenities_grid_item .amenities_icon {
@@ -97,10 +111,18 @@
         min-height: 130px;
     }
     .amenities_grid {
-        grid-template-columns: repeat(2, 130px);
+        grid-template-columns: repeat(2, 159px);
         gap: 10px;
     }
     .amenities_grid_item .amenities_text {
         font-size: 12px;
     }
+}
+@media (max-width: 350px) {
+        .amenities_grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+
 }

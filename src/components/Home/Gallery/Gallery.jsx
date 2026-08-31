@@ -8,7 +8,7 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { Col, Container, Row, Tab, Tabs } from 'react-bootstrap';
-
+import flower from "./flower.png"
 const galleryBG = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/gallery_bg.webp`;
 const arvindamLogo = `${process.env.REACT_APP_API_URL}/assests/images/new-gallery/arvindam_logo.webp`;
 
@@ -146,11 +146,13 @@ const Gallery = () => {
 
     return(
         <section className="gallery_section padding-top padding-bottom" id="gallery">
-            <img src={galleryBG} alt='Gallery' className='gallery_bg_image' />
+            {/* <img src={galleryBG} alt='Gallery' className='gallery_bg_image' /> */}
             <Container>
                 <Row>
                     <Col>
-                        <h2 className="main_heading">Gallery</h2>
+                        <h2 className="main_heading !text-black flex gap-3 items-center !mb-9">
+                            <img src={flower} alt="flower" srcset="" />
+                            Gallery</h2>
 
                         <Tabs
                             id="gallery_tabs"

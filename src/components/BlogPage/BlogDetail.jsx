@@ -2,15 +2,22 @@ import { useEffect, useState } from "react";
 import "./BlogPage.css";
 import { useLocation, useParams } from "react-router-dom";
 import axios from "axios";
-import { Col, Container, Row, Spinner } from "react-bootstrap";
+import { Button, Col, Container, Row, Spinner } from "react-bootstrap";
 import MetaData from "../Layouts/MetaData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderOpen, faHashtag } from "@fortawesome/free-solid-svg-icons";
 import BlogSidebar from "./BlogSidebar";
+import { useFormContext } from "../FormContext";
 
 const defaultImage = `${process.env.REACT_APP_API_URL}/assests/images/placeholder-image.webp`;
 
 const BlogDetail = () => {
+      const {
+        openPriceForm,
+        isPriceFormOpen,
+        priceFormOpenedManually,
+        priceFormAutoOpened,
+      } = useFormContext();
     const url = useParams().url;
 
     const location = useLocation();
@@ -90,7 +97,7 @@ const BlogDetail = () => {
                         canonicalUrl={`${process.env.REACT_APP_API_URL}${location.pathname}`}
                     />
 
-                    <div className="blog-detail-page padding-top padding-bottom">
+                    <div className="blog-detail-page padding-top-bolg padding-bottom">
                         
                         <Container>
                             <Row>
@@ -98,12 +105,16 @@ const BlogDetail = () => {
                                     <h1 className="main_heading blog_details_heading">{title}</h1>
                                     <p className="paragraph">Posted On: {date}</p>
 
-                                    <div className="thumbnail-img padding-top">
+                                    <div className="thumbnail-img padding-top-bolg">
                                         <img src={image ? `${process.env.REACT_APP_API_URL}/uploads/${image}` : defaultImage} alt={imageAlt ? imageAlt : title} className="blog-details-image border" />
                                     </div>
 
-                                    <div className="blog-detail-content padding-top padding-bottom">
-                                        <div className="blog-details-content-div" dangerouslySetInnerHTML={{ __html: content }}></div>
+                                    <div className="blog-detail-content padding-top-bolg padding-bottom-blog">
+                                        <div className="blog-details-content-div padding-bottom-blog" dangerouslySetInnerHTML={{ __html: content }}></div>
+                                        <div>
+                                            
+                                            <button className="blog-detail-content-btn " onClick={() => openPriceForm("Request More Details About Vamana Residences", "Share your information, and our team will provide all the details you need to make an informed decision.", "Enquire Now", "request")}>Contact US</button>
+                                        </div>
                                     </div>
 
                                     <div className="blog-category-block">

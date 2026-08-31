@@ -100,7 +100,7 @@ const EnquireForm = ({ subtitle, title, showSide, button, formId}) => {
 
     const [formError, setFormError] = useState("");
     const [loading, setLoading] = useState(false);
-    const [priceRange, setPriceRange] = useState("1.5 Cr to 2 Cr");
+    // const [priceRange, setPriceRange] = useState("1.5 Cr to 2 Cr");
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -118,7 +118,7 @@ const EnquireForm = ({ subtitle, title, showSide, button, formId}) => {
                     name: formData.name,
                     mobileNumber: formData.mobileNumber,
                     email: formData.email,
-                    price: priceRange,
+                    // price: priceRange,
                 }),
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
             })
@@ -178,7 +178,7 @@ const EnquireForm = ({ subtitle, title, showSide, button, formId}) => {
 
     const resetForm = () => {
         setFormData({ name: "", email: "", mobileNumber: "", terms: false });
-        setPriceRange('1.5 Cr to 2 Cr');
+        // setPriceRange('1.5 Cr to 2 Cr');
     }
 
     return (
@@ -244,7 +244,7 @@ const EnquireForm = ({ subtitle, title, showSide, button, formId}) => {
                         <p className={`text-red-400 error text-sm ${errors.mobileNumber && "visible"}`}>{errors.mobileNumber ? errors.mobileNumber : "Please Fill Out this Field"}</p>
                     </div>
 
-                    <div className="py-2 form-row">
+                    {/* <div className="py-2 form-row">
                         <p className='form_label'>Select Budget*</p>
 
                         <ToggleButtonGroup name={`price_range_${formId}`} className='price_range_group' type="radio" value={priceRange} onChange={(val) => setPriceRange(val)}>
@@ -259,7 +259,7 @@ const EnquireForm = ({ subtitle, title, showSide, button, formId}) => {
                             </ToggleButton>
                         </ToggleButtonGroup>
                         
-                    </div>
+                    </div> */}
 
                     <p className={`checkbox_div flex items-center text-[10px] ${formData.terms ? 'font-semibold' : 'font-extralight  text-gray-400'}`}>
                         <label className="custom-checkbox">

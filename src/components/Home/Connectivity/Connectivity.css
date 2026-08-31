@@ -1,3 +1,19 @@
+/* Foreground decorative image sitting above the dark gradient overlay
+   (which is applied as the section's own background-image) and behind
+   the actual content (content uses z-10 relative). */
+.connectivity_section_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+}
+
 .connectivity_section {
     background-color: var(--color-black);
     position: relative;

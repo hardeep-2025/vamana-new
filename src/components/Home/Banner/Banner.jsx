@@ -3,7 +3,9 @@ import Slider from "react-slick";
 import { Button } from "react-bootstrap";
 import { useFormContext } from "../../FormContext";
 import EnquireForm from "../../Layouts/EnquireForm/EnquireForm";
-
+import { useState } from "react";
+import verif from "./verified.png"
+import rigth from "./right.png"
 const telephone = `${process.env.REACT_APP_API_URL}/assests/images/telephone.webp`;
 const appIcon = `${process.env.REACT_APP_API_URL}/assests/images/app-icon.webp`;
 const rupee = `${process.env.REACT_APP_API_URL}/assests/images/rupee.webp`;
@@ -19,27 +21,21 @@ const banner3 = `${process.env.REACT_APP_API_URL}/assests/images/banner/newbanne
 const weGetOptions = [
     {
         icon: telephone,
-        text: "Immediate Call Back from Property Expert",
+        text: "Expert Assistance",
     },
-    {
-        icon: carIcon,
-        text: "Free Site Visit with Pickup & Drop Service",
-    },
+   
     {
         icon: appIcon,
-        text: "Project Brochure & Floor Plans on WhatsApp",
+        text: "Project Details Via Whatsapp",
     },
     {
         icon: rupee,
-        text: "Direct Developer Pricing – Best Price Guarantee",
+        text: "Exclusive Developer Pricing Guaranteed",
     },
-    {
-        icon: business,
-        text: "Dedicated Relationship Manager",
-    },
+
     {
         icon: operator,
-        text: "Expert Assistance with Home Loan & Documentation",
+        text: "Home Loan Assistance",
     }
 ]
 
@@ -72,7 +68,7 @@ const Banner = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
     };
-
+const [isOpen, setIsOpen] = useState(true);
     return(
         <>
             <div className="banner_slider">
@@ -83,13 +79,52 @@ const Banner = () => {
                         </div>
                     ))}
                 </Slider>
-                <div className="banner_slider_text">
-                    <div className="banner_slider_text_inner">
+                <div className="banner_slider_text mainBannerDivSection">
+                  <div className="headingSectionBanner">
+                    <div className="BookingSection">
+                        Booking Open
+                </div> 
+                </div>
+                    <div className="bannerHeading">
+                        <h1 className="mainBannerHeading">
+                            Vamana Arvindam Luxury Apartments
+                        </h1>
+                        <p className="mainHeadingSubSection">ARV SC in Flats | Dual Core Open Floors | Fully Loaded Kitchens | Complete Wooden work | 10 Ft Wide Sun Deck</p>
+                    </div>
+
+
+                    <div className="bannerPiontSection">
+                        <span className="Reragreen"><img src={verif} alt="" /> RERA Approved</span>
+                        <span className="premBrown">Premium Residences</span>
+                        <span className="Sqblue">30K Sq.ft. Clubhouse</span>
+                        <span className="AcresGreen">7.7 Acres</span>
+                        <span className="hoemBlack">Home Loan Available</span>
+                    </div>
+
+                    <div className="bannerSubParaSection">
+                        <span>Live Inspired - Premium Luxury Apartments on Patiala Road, Zirakpur</span>
+                    </div>
+                  
+
+                  <div className="priceSectionBanner">
+                    <span>
+                        <span className="price">
+                           ₹ 1.8 Cr* Onwards
+                        </span>
+                        <span>2.325 sq.ft.  </span><span>| </span> <span>3, 3+1 & 4+1 BHK  </span><span>|  </span> <span>RERA PBRERA-SAS79-PR1018</span>
+                    </span>
+                    </div>
+                    <div className="banner_bottom_text">
+                         <Button className="banner_enquire_btn" onClick={() => openPriceForm("Schedule Your Free Site Visit at Vamana Residences", "Experience luxury living firsthand and get personalized guidance from our expert team.", "Schedule Visit", "schedule")}>Schedule a Free Site Visit</Button>
+                    </div>
+                  </div>
+
+                    {/* <div className="banner_slider_text_inner">
                         <div className="bannner_slider_white_box">
                             <p className="booking_text">Booking Open</p>
                             <div className="logo_location">
-                                <img src={logoBlack} alt="Vamana Arvindam Zirakpur" className="logo_image" />
-                                <p className="logo_location_text">At Zirakpur chandigarh</p>
+                                <h2 className="bannerHeading">Vamana Arvindam</h2>
+                                <p className="logo_location_text">Luxury Apartments</p>
                             </div>
                             <div className="points_block">
                                 <p className="points_block_text">Land Parcel : 7.7 Acres</p>
@@ -116,28 +151,34 @@ const Banner = () => {
                                 <Button className="banner_enquire_btn" onClick={() => openPriceForm("Schedule Your Free Site Visit at Vamana Residences", "Experience luxury living firsthand and get personalized guidance from our expert team.", "Schedule Visit", "schedule")}>Schedule a Free Site Visit</Button>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
-                <div className="right_fixed_sidebar">
-                    <div className="bottom_fixed_sidebar">
-                        <p className="price_list_heading">Vamana Residences Exclusive Price List!</p>
+                        <div className={`right_fixed_sidebar  ${!isOpen ? "closed" : ""}`}>
+                              <button
+                                className={`sidebar_handle_btn  ${!isOpen ? "goright" : ""}`}
+                                onClick={() => setIsOpen(!isOpen)}
+                                >
+                                {isOpen ? <img src={rigth} alt="" srcset="" />: <img src={rigth} alt="" srcset="" />}
+                                </button>
+                        <div className="bottom_fixed_sidebar ">
+
+                        <p className="price_list_heading">Vamana Exclusive Price List</p>
                         <p className="price_list_subtext">Explore Comprehensive and Updated Price Information for Vamana Residences</p>
                         <EnquireForm formId={"fixed"} title="Ultra-Luxurious 3, 3+1, and 4+1 BHK Flats & Penthouses/Duplexes | Starting at ₹1.5 Cr*" button="Download Price List" />
                         <div className="py-2 form-row we_get_row">
                             <p className='form_label'>What You Get</p>
                             <div className='we_get_div_grid'>
                                 {weGetOptions.map((item,i) => (
-                                    <div className='we_get_div_item' key={i}>
-                                        <img src={item.icon} alt={item.text} className='we_get_icon' />
-                                        <p className='we_get_text'>{item.text}</p>
+                                    <div className='we_get_div_item flex items-center w-full gap-3 ' key={i}>
+                                        <img src={item.icon} alt={item.text} className='we_get_icon w-[14px]' />
+                                        <p className='we_get_tex font-medium'>{item.text}</p>
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </>
     )
 

@@ -1,90 +1,138 @@
-.floor_plans_nav {
-    margin: 2rem 0;
-    gap: 10px;
-    justify-content: center;
-}
-.floor_plans_nav .nav-link {
-    background-color: var(--color-btn-bg);
-    border: 1px solid var(--color-border);
-    font-size: 20px;
-    font-weight: 600;
-    font-family: var(--font-semibold);
-    color: var(--color-black);
-    border-radius: 8px;
-}
-.floor_plans_nav .nav-link.active,
-.floor_plans_nav .nav-link:hover {
-    background-color: var(--color-yellow);
-    color: var(--color-white);
-}
-.floor_blans_image img {
-    max-width: 100%;
-    margin: auto;
-    cursor: pointer;
-}
-.floor_palns_flex {
-    display: flex;
-    gap: 1rem;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem;
-}
-.floor_palns_flex .floor_text_title {
-    font-size: 25px;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-family: var(--font-medium);
-}
-.floor_palns_flex .blur {
-    filter: blur(4px);
-}
-.floor_palns_flex .floor_text_content {
-    font-size: 18px;
-}
-.floor_plans_btn {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    font-size: 18px;
-    font-weight: 500;
-    background-color: var(--color-gray);
-    padding: 10px 20px;
-    border: 1px solid var(--color-gray);
-}
-.floor_plans_btn img {
-    width: 25px;
-    height: 25px;
-    object-fir: contain;
-}
-.floor_plans_btn:hover,
-.floor_plans_btn:active {
-    background-color: var(--color-yellow) !important;
-    color: var(--color-white) !important;
-    border: 1px solid var(--color-yellow) !important;
+/* ===== Floor Plan section — grid card layout ===== */
+
+/* .home-floorplan-section {
+  padding-bottom: 60px;
+} */
+
+.floorplan_heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 78px;
 }
 
-@media (max-width: 991px) {
-    .floor_plans_nav .nav-link  {
-        font-size: 16px;
-    }
+.floorplan_heading_icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
 }
+
+.floorplan_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px 50px;
+}
+
 @media (max-width: 767px) {
-    .floor_palns_flex {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .floor_palns_flex .floor_text_title {
-        font-size: 20px;
-    }
-    .floor_palns_flex .floor_text_content {
-        font-size: 16px;
-    }
-    .floor_plans_nav .nav-link {
-        padding: 7px 15px;
-    }
-    .floor_plans_btn {
-        font-size: 16px;
-        padding: 7px 15px;
-    }
+  .floorplan_grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+}
+
+.floorplan_card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e3c795;
+  border-radius: 18px;
+  padding: 26px 20px 20px;
+}
+
+.floorplan_badge {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid #c99a3f;
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 26px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.floorplan_card:hover .floorplan_badge {
+  background: #a9631a;
+  border-color: #a9631a;
+  color: #fff;
+}
+
+.floorplan_card_image {
+  margin: 10px 0 18px;
+  text-align: center;
+}
+
+.floor_plan_img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.floor_plan_img.blur {
+  filter: blur(6px);
+  cursor: default;
+}
+
+.floorplan_card_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.floorplan_card_text {
+  min-width: 0;
+}
+
+.floor_text_title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 4px;
+}
+
+.floor_text_content {
+  font-size: 16px;
+  color: #000000;
+  font-weight: 400;
+  margin: 0;
+}
+
+.floor_text_title.blur,
+.floor_text_content.blur {
+  filter: blur(3px);
+  user-select: none;
+}
+
+.floor_plans_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #a9631a !important;
+  border: none !important;
+  border-radius: 8px;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff !important;
+  white-space: nowrap;
+}
+
+.floor_plans_btn:hover {
+  background: #8f5215 !important;
+}
+
+.floor_plans_btn .open_icon {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+/* Lightbox stays as-is from the original implementation */
+.single-lightbox {
+  z-index: 9999;
 }

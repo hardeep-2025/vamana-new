@@ -3,6 +3,187 @@
     height: 100vh;
     min-height: 750px;
 }
+.bannerHeading{
+font-weight: 600;
+font-size: 38px;
+line-height: 27px;
+color: black;
+background-color: #D9D9D9C2;
+padding: 18px 17px;
+padding-bottom: 15px;
+border-radius: 10px;
+
+}
+.headingSectionBanner{
+
+}
+.bannerHeading .mainHeadingSubSection{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23px;
+    
+}
+
+.BookingSection{
+    font-size: 18px;
+    font-weight: 800;
+    background-color: #FF0000;
+    position: relative;
+    top: 12px;
+    padding: 7px 14px;
+    width: max-content;
+    border-radius: 10px;
+}
+
+.mainBannerDivSection{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    color: white !important;
+}
+
+
+.bannerPiontSection{
+    display: flex;
+    gap: 12px;   
+    margin-top: 45px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+.bannerPiontSection span{
+    padding: 5px 14px;
+    border-radius: 25px;
+}
+.Reragreen{
+    background-color: #0A8B63;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.premBrown{
+    background-color: #8F6445;
+}
+.Sqblue{
+    background-color: #295FD9;
+}
+.AcresGreen{
+    background-color: #13AB78;
+}
+.hoemBlack{
+    background-color: #111111;
+}
+.bannerSubParaSection span{
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 400 !important;
+    margin-top: 30px;
+    margin-bottom: 22px;
+}
+.priceSectionBanner{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 23px;
+    margin-top: 22px;
+    margin-bottom: 63px;
+}
+.priceSectionBanner>span{
+    display: flex;
+    gap: 22px;
+    align-items: center;
+    color: black;
+    background-color: #D9D9D9C2;
+    padding: 7px 13px;
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+.price{
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 27px;
+    color: #FF0000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.banner_slider .banner_slider_item {
+    position: relative;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.banner_slider .banner_slider_bg {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.banner_slider .banner_slider_item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.288); /* Adjust darkness */
+    z-index: 1;
+    pointer-events: none;
+}
+
+.sidebar_handle_btn {
+    position: fixed;
+    top: 50%;
+    right: 25%; /* Adjust according to sidebar width */
+    transform: translateY(-50%);
+    background: #FFFFFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    z-index: 99999;
+    padding: 5px 3px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+    font-weight: bold;
+            transition: right .4s ease;
+
+}
+.sidebar_handle_btn.goright{
+    right: 0px;
+        transition: right .4s ease;
+
+}
+.sidebar_handle_btn.goright img {
+    transform: rotate(180deg);
+    transition: transform 0.4s ease;
+}
+.right_fixed_sidebar.closed  {
+    right: 0;
+}
+
+
+.right_fixed_sidebar{
+    position: fixed;
+    right: 0;
+    transition: right .4s ease;
+}
+
+.right_fixed_sidebar.closed{
+    right: calc(-29%);  
+        transition: right .4s ease;
+
+}
+
 .banner_slider .banner_slider_item {
     height: 100vh;
     min-height: 750px;
@@ -59,6 +240,7 @@
 .logo_location {
     font-size: 18px;
     font-weight: 600;
+    margin-top: -20px;
     font-family: var(--font-semibold);
     color: var(--color-black);
 }
@@ -129,7 +311,7 @@
     padding: 5.5px 20px;
     min-width: 176px;
     width: max-content;
-    margin: auto;
+    margin-left:12px ;
 }
 .banner_bottom_text .banner_enquire_btn:hover {
     background-color: var(--color-transparent);
@@ -193,25 +375,28 @@
     }
 } */
 @media (max-width: 575px) {
-    .banner_slider_text {
-        position: relative;
-        padding: 0 15px;
-        top: -7px;
+
+    .banner_slider_text{
+        height: 100% !important;
+
     }
     .banner_slider .banner_slider_item {
         padding: 0;
-        min-height: 600px;
+        min-height: 1060px;
     }
     .banner_slider_text_inner {
         max-width: 100%;
     }
-    .banner_slider, .banner_slider_text {
-        height: auto;
-        min-height: auto;
+    .banner_slider {
+        height: 100%;
+      
         width: 100%;
     }
+    .banner_slider_text{
+        height: 100%;
+    }
     .bannner_slider_white_box {
-        gap: 1rem;
+        /* gap: 1rem; */
         max-width: 346px;
         width: 100%;
         margin: auto;
@@ -240,10 +425,12 @@
     display: flex;
     flex-direction: column;
     height: calc(100% - 71.5px);
-    position: absolute;
+    position: fixed;
+    z-index: 999;
     top: 0;
     right: 0;
     overflow-y: auto;
+
 }
 .right_fixed_schedule {
     background-color: var(--color-transparent);

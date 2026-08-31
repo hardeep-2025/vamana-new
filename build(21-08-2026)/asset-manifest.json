@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1f7202c5.css",
+    "main.js": "/static/js/main.b900f7f5.js",
+    "static/js/453.31deaffd.chunk.js": "/static/js/453.31deaffd.chunk.js",
+    "static/media/gallery.png": "/static/media/gallery.a408b385480ecc270767.png",
+    "static/media/bg.png": "/static/media/bg.7c3cfb26293a9de3418d.png",
+    "static/media/vamana-hero.png": "/static/media/vamana-hero.8f377bf29897b2727457.png",
+    "static/media/bgfooter.png": "/static/media/bgfooter.0084c1dcc5f6877ab474.png",
+    "static/media/sideimage.png": "/static/media/sideimage.2966538262bb9ae6b268.png",
+    "static/media/Poppins-Regular.ttf": "/static/media/Poppins-Regular.35d26b781dc5fda684cc.ttf",
+    "static/media/Poppins-Medium.ttf": "/static/media/Poppins-Medium.673ed42382ab264e0bf5.ttf",
+    "static/media/Poppins-SemiBold.ttf": "/static/media/Poppins-SemiBold.ac8d04b620e54be9b0f0.ttf",
+    "static/media/Poppins-Bold.ttf": "/static/media/Poppins-Bold.cdb29a5d7ccf57ff05a3.ttf",
+    "static/media/Sansation-Light.ttf": "/static/media/Sansation-Light.373c35ea55e421fcdd65.ttf",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "index.html": "/index.html",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "main.1f7202c5.css.map": "/static/css/main.1f7202c5.css.map",
+    "main.b900f7f5.js.map": "/static/js/main.b900f7f5.js.map",
+    "453.31deaffd.chunk.js.map": "/static/js/453.31deaffd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f7202c5.css",
+    "static/js/main.b900f7f5.js"
+  ]
+}

@@ -102,7 +102,7 @@
 }
 .header_rera_number {
     font-size: 15px;
-    line-height: 15px;
+    line-height: 14px;
     font-weight: 600;
     font-family: var(--font-semibold);
     color: var(--color-black);
@@ -709,6 +709,7 @@
     bottom: 30px;
     display: flex;
     gap: 10px;
+    z-index: 9999 !important;
 }
 .fixed_btns_header .header_btns_float {
     width: 40px;

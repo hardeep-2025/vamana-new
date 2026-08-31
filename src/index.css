@@ -117,16 +117,16 @@ code {
   --bs-border-radius-lg: 8px;
 }
 .padding-top {
-  padding-top: 4rem;
+  padding-top: 146px;
 }
 .padding-bottom {
-  padding-bottom: 4rem;
+  padding-bottom: 146px;
 }
 @media (max-width: 767px) {
   .padding-top {
-    padding-top: 3rem;
+    padding-top: 60px;
   }
   .padding-bottom {
-    padding-bottom: 3rem;
+    padding-bottom: 60px;
   }
 }

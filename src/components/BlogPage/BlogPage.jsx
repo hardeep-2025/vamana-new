@@ -82,7 +82,7 @@ const BlogPage = () => {
                 blogSchema={blogSchema}
             />
 
-            <div className="blog_page_section sidebar_layout padding-top padding-bottom"  ref={blogRef}>
+            <div className="blog_page_section sidebar_layout padding-top-bolg padding-bottom"  ref={blogRef}>
                 <Container>
                     <Row>
                         <Col lg={8}>

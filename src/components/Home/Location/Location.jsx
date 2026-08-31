@@ -71,7 +71,7 @@ const Location = () => {
     ]
 
     return(
-        <section className="home-location-section bg-black text-white py-8 md:py-16 px-2.5 relative" id="location">
+        <section className="home-location-section bg-black text-white py-[146px] md:py-16 px-2.5 relative" id="location">
             <div className='max-w-6xl m-auto z-10 relative'>
                 <div className="flex flex-col md:flex-row gap-7 lg:gap-14">
                     <div className="w-full md:1/2 lg:w-3/5 flex flex-col gap-5">

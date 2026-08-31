@@ -1,7 +1,7 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./MasterPlan.css";
 import { useFormContext } from "../../FormContext";
-
+import masterbg from "./gallery.png"
 const masterplanBg = `${process.env.REACT_APP_API_URL}/assests/images/location_bg.webp`;
 const masterplan = `${process.env.REACT_APP_API_URL}/assests/images/masterplan/gate-view.webp`;
 const masterplan1 = `${process.env.REACT_APP_API_URL}/assests/images/masterplan/masterplan1.webp`;
@@ -38,10 +38,10 @@ const MasterPlan = () => {
                                     <div className="master_plan_texts_col">
                                         <div className="masterplan_left_img">
                                             <div className="masterplan_left_border"></div>
-                                            <img src={masterplan} alt="Entrance gate view of luxury flats for sale in Zirakpur at Vamana Arvindam offering modern architecture and premium living." className="masterplan_left" />
+                                            <img src={masterbg} alt="Entrance gate view of luxury flats for sale in Zirakpur at Vamana Arvindam offering modern architecture and premium living." className="masterplan_left" />
                                         </div>
                                     </div>
-                                    <div className="master_plan_texts_col">
+                                    <div className="master_plan_texts_col text-master_plan_texts_col">
                                         <p className="paragraph">Nestled amidst 7.77 acres of lush greenery on the vibrant NH-7,  Patiala Highway, Vamana Residences offers a unique blend of modern living and natural serenity with its luxurious <b>3bhk flats in Zirakpur</b> and <b>4bhk flats in Zirakpur</b>. With 350 thoughtfully designed units, this meticulously planned community provides an idyllic escape from the city's hustle and bustle.</p>
                                         <p className="paragraph">Experience the perfect harmony of nature and luxury as you step into a world of well-defined residential clusters. Enjoy a plethora of world-class amenities, from state-of-the-art fitness centers to tranquil recreational spaces. Vamana's prime location, coupled with dedicated parking and top-tier security, ensures a convenient and secure lifestyle for its residents.</p>
                                         <p className="paragraph">Indulge in the epitome of comfortable living at <b>Vamana Residences.</b></p>

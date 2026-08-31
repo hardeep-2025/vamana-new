@@ -22,7 +22,7 @@ const ClubZaira = () => {
                             <p className="paragraph">In addition to these facilities, Club Zaira includes a variety of other luxurious features, such as a spa, a multipurpose lounge, and dedicated spaces for social gatherings and events. Residents can also enjoy activities like yoga classes, indoor games, and more, providing a well-rounded experience that promotes both fitness and social interaction.</p>
                             <p className="paragraph">With its thoughtful design and comprehensive amenities, including the magnificent swimming pool, Club Zaira truly brings comfort and luxury to its users, creating an unparalleled environment for leisure and community engagement.</p>
 
-                            <div className="clubzaira_rounded_section">
+                            <div className="clubzaira_rounded_section mb-6">
                                 <img src={clubzairaBg} alt="Club Zaira at Vamana Arvindam Zirakpur featuring modern clubhouse, recreation areas, and luxury lifestyle amenities" className="club_zaira_bg" />
                                 <div className="clubzaira_rounded_inner">
                                     <div className="clubzaira_content_div">
