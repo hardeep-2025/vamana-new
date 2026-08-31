@@ -7,10 +7,15 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebookF,
   faInstagram,
-  faYoutube,
-  faXTwitter, // or faTwitter if you want the old Twitter logo
 } from "@fortawesome/free-brands-svg-icons";import { Col, Container, Row } from "react-bootstrap";
 import bg from "./bgfooter.png"
+import facebook from "./socialIocn/faceBook.png"
+import insta from "./socialIocn/insta.png"
+import link from "./socialIocn/link.png"
+import pins from "./socialIocn/pins.png"
+import x from "./socialIocn/x.png"
+
+
 const logo = `${process.env.REACT_APP_API_URL}/assests/images/logo.png`;
 
 const Footer = () => {
@@ -60,12 +65,21 @@ const Footer = () => {
 
     const social = [
         {
-            icon: faFacebookF,
+            icon: facebook,
             linkTo:"https://www.facebook.com/people/Vamanaresidences/61588765172273/"
         },
         {
-            icon: faInstagram,
+            icon: x,
+            linkTo:"https://x.com/vamanaresidence"
+        },{
+            icon: insta,
             linkTo:"https://www.instagram.com/vamanaresidences/"
+        },{
+            icon: pins,
+            linkTo:"https://in.pinterest.com/vamanaresidences/"
+        },{
+            icon: link,
+            linkTo:"https://www.linkedin.com/in/vamana-residences-3b3368431/"
         },
         // {
         //     icon: faYoutube,
@@ -113,7 +127,7 @@ const Footer = () => {
                                         {social.map((item, i) =>(
                                             <li key={i} className="bg-primary-yellow rounded-full size-[30px] flex items-center justify-center">
                                                 <a href={item.linkTo} >
-                                                <FontAwesomeIcon icon={item.icon} className="text-base text-white"/></a>
+                                                <img src={item.icon} alt="hi" className="text-base text-white"/></a>
                                             </li>
                                         ))}
                                         
